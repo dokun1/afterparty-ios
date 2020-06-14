@@ -1,0 +1,826 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEC2464EE290012DA56 /* NearbyEvents.swift */; };
+		504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEE2464EE8E0012DA56 /* MyEvents.swift */; };
+		504C2CF12464EE980012DA56 /* MySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CF02464EE980012DA56 /* MySettings.swift */; };
+		504C2E9F2464F6230012DA56 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2E9E2464F6230012DA56 /* MapView.swift */; };
+		504C2EA12464FD400012DA56 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2EA02464FD400012DA56 /* EventList.swift */; };
+		507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F8E245E52A20019C25C /* AppDelegate.swift */; };
+		507D4F91245E52A20019C25C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F90245E52A20019C25C /* SceneDelegate.swift */; };
+		507D4F94245E52A20019C25C /* Afterparty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F92245E52A20019C25C /* Afterparty.xcdatamodeld */; };
+		507D4F96245E52A20019C25C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F95245E52A20019C25C /* HomeView.swift */; };
+		507D4F98245E52A30019C25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507D4F97245E52A30019C25C /* Assets.xcassets */; };
+		507D4F9B245E52A30019C25C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507D4F9A245E52A30019C25C /* Preview Assets.xcassets */; };
+		507D4F9E245E52A30019C25C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507D4F9C245E52A30019C25C /* LaunchScreen.storyboard */; };
+		507D4FA9245E52A30019C25C /* AfterpartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FA8245E52A30019C25C /* AfterpartyTests.swift */; };
+		507D4FB4245E52A30019C25C /* AfterpartyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FB3245E52A30019C25C /* AfterpartyUITests.swift */; };
+		507D4FC2245E5C0D0019C25C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 507D4FC1245E5C0D0019C25C /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		507D4FA5245E52A30019C25C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 507D4F83245E52A20019C25C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 507D4F8A245E52A20019C25C;
+			remoteInfo = Afterparty;
+		};
+		507D4FB0245E52A30019C25C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 507D4F83245E52A20019C25C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 507D4F8A245E52A20019C25C;
+			remoteInfo = Afterparty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		504C2CEC2464EE290012DA56 /* NearbyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyEvents.swift; sourceTree = "<group>"; };
+		504C2CEE2464EE8E0012DA56 /* MyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEvents.swift; sourceTree = "<group>"; };
+		504C2CF02464EE980012DA56 /* MySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettings.swift; sourceTree = "<group>"; };
+		504C2CF62464F02A0012DA56 /* FirebaseABTesting.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseABTesting.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseABTesting/FirebaseABTesting.xcframework; sourceTree = "<group>"; };
+		504C2CF72464F02A0012DA56 /* Protobuf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Protobuf.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseABTesting/Protobuf.xcframework; sourceTree = "<group>"; };
+		504C2CFD2464F0350012DA56 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		504C2CFE2464F0350012DA56 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		504C2CFF2464F0350012DA56 /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseCore.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/FirebaseCore.xcframework; sourceTree = "<group>"; };
+		504C2D002464F0350012DA56 /* FirebaseCoreDiagnostics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseCoreDiagnostics.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/FirebaseCoreDiagnostics.xcframework; sourceTree = "<group>"; };
+		504C2D012464F0350012DA56 /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseInstallations.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/FirebaseInstallations.xcframework; sourceTree = "<group>"; };
+		504C2D0C2464F03A0012DA56 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		504C2D0D2464F03A0012DA56 /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleDataTransport.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/GoogleDataTransport.xcframework; sourceTree = "<group>"; };
+		504C2D0E2464F03A0012DA56 /* GoogleDataTransportCCTSupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleDataTransportCCTSupport.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/GoogleDataTransportCCTSupport.xcframework; sourceTree = "<group>"; };
+		504C2D0F2464F03A0012DA56 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		504C2D102464F03A0012DA56 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/nanopb.xcframework; sourceTree = "<group>"; };
+		504C2D112464F03A0012DA56 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/PromisesObjC.xcframework; sourceTree = "<group>"; };
+		504C2D1E2464F06B0012DA56 /* FirebaseCrashlytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseCrashlytics.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseCrashlytics/FirebaseCrashlytics.xcframework; sourceTree = "<group>"; };
+		504C2D212464F0740012DA56 /* abseil.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = abseil.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseFirestore/abseil.xcframework; sourceTree = "<group>"; };
+		504C2D222464F0740012DA56 /* BoringSSL-GRPC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "BoringSSL-GRPC.xcframework"; path = "Afterparty/Dependencies/Firebase/FirebaseFirestore/BoringSSL-GRPC.xcframework"; sourceTree = "<group>"; };
+		504C2D232464F0740012DA56 /* FirebaseFirestore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseFirestore.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseFirestore/FirebaseFirestore.xcframework; sourceTree = "<group>"; };
+		504C2D242464F0740012DA56 /* gRPC-C++.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "gRPC-C++.xcframework"; path = "Afterparty/Dependencies/Firebase/FirebaseFirestore/gRPC-C++.xcframework"; sourceTree = "<group>"; };
+		504C2D252464F0740012DA56 /* gRPC-Core.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "gRPC-Core.xcframework"; path = "Afterparty/Dependencies/Firebase/FirebaseFirestore/gRPC-Core.xcframework"; sourceTree = "<group>"; };
+		504C2D262464F0740012DA56 /* leveldb-library.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "leveldb-library.xcframework"; path = "Afterparty/Dependencies/Firebase/FirebaseFirestore/leveldb-library.xcframework"; sourceTree = "<group>"; };
+		504C2D332464F0810012DA56 /* FirebaseInstanceID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseInstanceID.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseRemoteConfig/FirebaseInstanceID.xcframework; sourceTree = "<group>"; };
+		504C2D342464F0810012DA56 /* FirebaseRemoteConfig.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseRemoteConfig.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseRemoteConfig/FirebaseRemoteConfig.xcframework; sourceTree = "<group>"; };
+		504C2D392464F08F0012DA56 /* FirebaseAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAuth.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAuth/FirebaseAuth.xcframework; sourceTree = "<group>"; };
+		504C2E9E2464F6230012DA56 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		504C2EA02464FD400012DA56 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
+		504C2EA624659E590012DA56 /* Afterparty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Afterparty.entitlements; sourceTree = "<group>"; };
+		507D4F8B245E52A20019C25C /* Afterparty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afterparty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		507D4F8E245E52A20019C25C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		507D4F90245E52A20019C25C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		507D4F93245E52A20019C25C /* Afterparty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Afterparty.xcdatamodel; sourceTree = "<group>"; };
+		507D4F95245E52A20019C25C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		507D4F97245E52A30019C25C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		507D4F9A245E52A30019C25C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		507D4F9D245E52A30019C25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		507D4F9F245E52A30019C25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		507D4FA4245E52A30019C25C /* AfterpartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfterpartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		507D4FA8245E52A30019C25C /* AfterpartyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterpartyTests.swift; sourceTree = "<group>"; };
+		507D4FAA245E52A30019C25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		507D4FAF245E52A30019C25C /* AfterpartyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfterpartyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		507D4FB3245E52A30019C25C /* AfterpartyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterpartyUITests.swift; sourceTree = "<group>"; };
+		507D4FB5245E52A30019C25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		507D4FC1245E5C0D0019C25C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		507D4FF7245E691A0019C25C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		507D4FF8245E691A0019C25C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		507D4FFB245E69B50019C25C /* Afterparty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Afterparty-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		507D4F88245E52A20019C25C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507D4FA1245E52A30019C25C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507D4FAC245E52A30019C25C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		504C2CE92464EDE50012DA56 /* Nearby Events */ = {
+			isa = PBXGroup;
+			children = (
+				504C2CEC2464EE290012DA56 /* NearbyEvents.swift */,
+				504C2E9E2464F6230012DA56 /* MapView.swift */,
+			);
+			path = "Nearby Events";
+			sourceTree = "<group>";
+		};
+		504C2CF22464EEA10012DA56 /* My Events */ = {
+			isa = PBXGroup;
+			children = (
+				504C2CEE2464EE8E0012DA56 /* MyEvents.swift */,
+			);
+			path = "My Events";
+			sourceTree = "<group>";
+		};
+		504C2CF32464EEA60012DA56 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				504C2CF02464EE980012DA56 /* MySettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		507D4F82245E52A20019C25C = {
+			isa = PBXGroup;
+			children = (
+				507D4FC1245E5C0D0019C25C /* GoogleService-Info.plist */,
+				507D4F8D245E52A20019C25C /* Afterparty */,
+				507D4FA7245E52A30019C25C /* AfterpartyTests */,
+				507D4FB2245E52A30019C25C /* AfterpartyUITests */,
+				507D4F8C245E52A20019C25C /* Products */,
+				507D4FF6245E691A0019C25C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		507D4F8C245E52A20019C25C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				507D4F8B245E52A20019C25C /* Afterparty.app */,
+				507D4FA4245E52A30019C25C /* AfterpartyTests.xctest */,
+				507D4FAF245E52A30019C25C /* AfterpartyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		507D4F8D245E52A20019C25C /* Afterparty */ = {
+			isa = PBXGroup;
+			children = (
+				504C2EA624659E590012DA56 /* Afterparty.entitlements */,
+				507D4FC6245E5E030019C25C /* Config */,
+				507D4FC4245E5DE40019C25C /* Dependencies */,
+				507D4FC3245E5DDD0019C25C /* Model */,
+				507D4FC7245E5E0F0019C25C /* Views */,
+				507D4F9F245E52A30019C25C /* Info.plist */,
+				507D4F99245E52A30019C25C /* Preview Content */,
+			);
+			path = Afterparty;
+			sourceTree = "<group>";
+		};
+		507D4F99245E52A30019C25C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				507D4F9A245E52A30019C25C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		507D4FA7245E52A30019C25C /* AfterpartyTests */ = {
+			isa = PBXGroup;
+			children = (
+				507D4FA8245E52A30019C25C /* AfterpartyTests.swift */,
+				507D4FAA245E52A30019C25C /* Info.plist */,
+			);
+			path = AfterpartyTests;
+			sourceTree = "<group>";
+		};
+		507D4FB2245E52A30019C25C /* AfterpartyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				507D4FB3245E52A30019C25C /* AfterpartyUITests.swift */,
+				507D4FB5245E52A30019C25C /* Info.plist */,
+			);
+			path = AfterpartyUITests;
+			sourceTree = "<group>";
+		};
+		507D4FC3245E5DDD0019C25C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				507D4F92245E52A20019C25C /* Afterparty.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		507D4FC4245E5DE40019C25C /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		507D4FC6245E5E030019C25C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				507D4F8E245E52A20019C25C /* AppDelegate.swift */,
+				507D4F90245E52A20019C25C /* SceneDelegate.swift */,
+				507D4FFB245E69B50019C25C /* Afterparty-Bridging-Header.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		507D4FC7245E5E0F0019C25C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				507D4F9C245E52A30019C25C /* LaunchScreen.storyboard */,
+				507D4F97245E52A30019C25C /* Assets.xcassets */,
+				504C2EA02464FD400012DA56 /* EventList.swift */,
+				504C2CE92464EDE50012DA56 /* Nearby Events */,
+				504C2CF22464EEA10012DA56 /* My Events */,
+				504C2CF32464EEA60012DA56 /* Settings */,
+				507D5078245E749E0019C25C /* HomeScreen */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		507D4FF6245E691A0019C25C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				504C2CF62464F02A0012DA56 /* FirebaseABTesting.xcframework */,
+				504C2CF72464F02A0012DA56 /* Protobuf.xcframework */,
+				504C2CFD2464F0350012DA56 /* FIRAnalyticsConnector.framework */,
+				504C2CFE2464F0350012DA56 /* FirebaseAnalytics.framework */,
+				504C2CFF2464F0350012DA56 /* FirebaseCore.xcframework */,
+				504C2D002464F0350012DA56 /* FirebaseCoreDiagnostics.xcframework */,
+				504C2D392464F08F0012DA56 /* FirebaseAuth.xcframework */,
+				504C2D0C2464F03A0012DA56 /* GoogleAppMeasurement.framework */,
+				504C2D0D2464F03A0012DA56 /* GoogleDataTransport.xcframework */,
+				504C2D0E2464F03A0012DA56 /* GoogleDataTransportCCTSupport.xcframework */,
+				504C2D0F2464F03A0012DA56 /* GoogleUtilities.xcframework */,
+				504C2D102464F03A0012DA56 /* nanopb.xcframework */,
+				504C2D1E2464F06B0012DA56 /* FirebaseCrashlytics.xcframework */,
+				504C2D112464F03A0012DA56 /* PromisesObjC.xcframework */,
+				504C2D012464F0350012DA56 /* FirebaseInstallations.xcframework */,
+				504C2D332464F0810012DA56 /* FirebaseInstanceID.xcframework */,
+				504C2D342464F0810012DA56 /* FirebaseRemoteConfig.xcframework */,
+				504C2D212464F0740012DA56 /* abseil.xcframework */,
+				504C2D222464F0740012DA56 /* BoringSSL-GRPC.xcframework */,
+				504C2D232464F0740012DA56 /* FirebaseFirestore.xcframework */,
+				504C2D242464F0740012DA56 /* gRPC-C++.xcframework */,
+				504C2D252464F0740012DA56 /* gRPC-Core.xcframework */,
+				504C2D262464F0740012DA56 /* leveldb-library.xcframework */,
+				507D4FF7245E691A0019C25C /* libsqlite3.0.tbd */,
+				507D4FF8245E691A0019C25C /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		507D5078245E749E0019C25C /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				507D4F95245E52A20019C25C /* HomeView.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		507D4F8A245E52A20019C25C /* Afterparty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507D4FB8245E52A30019C25C /* Build configuration list for PBXNativeTarget "Afterparty" */;
+			buildPhases = (
+				507D4F87245E52A20019C25C /* Sources */,
+				507D4F88245E52A20019C25C /* Frameworks */,
+				507D4F89245E52A20019C25C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Afterparty;
+			productName = Afterparty;
+			productReference = 507D4F8B245E52A20019C25C /* Afterparty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		507D4FA3245E52A30019C25C /* AfterpartyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507D4FBB245E52A30019C25C /* Build configuration list for PBXNativeTarget "AfterpartyTests" */;
+			buildPhases = (
+				507D4FA0245E52A30019C25C /* Sources */,
+				507D4FA1245E52A30019C25C /* Frameworks */,
+				507D4FA2245E52A30019C25C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				507D4FA6245E52A30019C25C /* PBXTargetDependency */,
+			);
+			name = AfterpartyTests;
+			productName = AfterpartyTests;
+			productReference = 507D4FA4245E52A30019C25C /* AfterpartyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		507D4FAE245E52A30019C25C /* AfterpartyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507D4FBE245E52A30019C25C /* Build configuration list for PBXNativeTarget "AfterpartyUITests" */;
+			buildPhases = (
+				507D4FAB245E52A30019C25C /* Sources */,
+				507D4FAC245E52A30019C25C /* Frameworks */,
+				507D4FAD245E52A30019C25C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				507D4FB1245E52A30019C25C /* PBXTargetDependency */,
+			);
+			name = AfterpartyUITests;
+			productName = AfterpartyUITests;
+			productReference = 507D4FAF245E52A30019C25C /* AfterpartyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		507D4F83245E52A20019C25C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "David Okun";
+				TargetAttributes = {
+					507D4F8A245E52A20019C25C = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+					};
+					507D4FA3245E52A30019C25C = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 507D4F8A245E52A20019C25C;
+					};
+					507D4FAE245E52A30019C25C = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 507D4F8A245E52A20019C25C;
+					};
+				};
+			};
+			buildConfigurationList = 507D4F86245E52A20019C25C /* Build configuration list for PBXProject "Afterparty" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 507D4F82245E52A20019C25C;
+			productRefGroup = 507D4F8C245E52A20019C25C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				507D4F8A245E52A20019C25C /* Afterparty */,
+				507D4FA3245E52A30019C25C /* AfterpartyTests */,
+				507D4FAE245E52A30019C25C /* AfterpartyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		507D4F89245E52A20019C25C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507D4F9E245E52A30019C25C /* LaunchScreen.storyboard in Resources */,
+				507D4FC2245E5C0D0019C25C /* GoogleService-Info.plist in Resources */,
+				507D4F9B245E52A30019C25C /* Preview Assets.xcassets in Resources */,
+				507D4F98245E52A30019C25C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507D4FA2245E52A30019C25C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507D4FAD245E52A30019C25C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		507D4F87245E52A20019C25C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507D4F94245E52A20019C25C /* Afterparty.xcdatamodeld in Sources */,
+				504C2E9F2464F6230012DA56 /* MapView.swift in Sources */,
+				504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */,
+				504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */,
+				504C2CF12464EE980012DA56 /* MySettings.swift in Sources */,
+				507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */,
+				504C2EA12464FD400012DA56 /* EventList.swift in Sources */,
+				507D4F96245E52A20019C25C /* HomeView.swift in Sources */,
+				507D4F91245E52A20019C25C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507D4FA0245E52A30019C25C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507D4FA9245E52A30019C25C /* AfterpartyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507D4FAB245E52A30019C25C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507D4FB4245E52A30019C25C /* AfterpartyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		507D4FA6245E52A30019C25C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 507D4F8A245E52A20019C25C /* Afterparty */;
+			targetProxy = 507D4FA5245E52A30019C25C /* PBXContainerItemProxy */;
+		};
+		507D4FB1245E52A30019C25C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 507D4F8A245E52A20019C25C /* Afterparty */;
+			targetProxy = 507D4FB0245E52A30019C25C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		507D4F9C245E52A30019C25C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				507D4F9D245E52A30019C25C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		507D4FB6245E52A30019C25C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		507D4FB7245E52A30019C25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		507D4FB9245E52A30019C25C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Afterparty/Afterparty.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
+				DEVELOPMENT_TEAM = RQ632LL2X3;
+				ENABLE_BITCODE = YES;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
+				);
+				INFOPLIST_FILE = Afterparty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.okun.Afterparty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Afterparty/Config/Afterparty-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		507D4FBA245E52A30019C25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Afterparty/Afterparty.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
+				DEVELOPMENT_TEAM = RQ632LL2X3;
+				ENABLE_BITCODE = YES;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
+					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
+				);
+				INFOPLIST_FILE = Afterparty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.okun.Afterparty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Afterparty/Config/Afterparty-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		507D4FBC245E52A30019C25C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RQ632LL2X3;
+				INFOPLIST_FILE = AfterpartyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.okun.AfterpartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Afterparty.app/Afterparty";
+			};
+			name = Debug;
+		};
+		507D4FBD245E52A30019C25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RQ632LL2X3;
+				INFOPLIST_FILE = AfterpartyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.okun.AfterpartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Afterparty.app/Afterparty";
+			};
+			name = Release;
+		};
+		507D4FBF245E52A30019C25C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RQ632LL2X3;
+				INFOPLIST_FILE = AfterpartyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.okun.AfterpartyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Afterparty;
+			};
+			name = Debug;
+		};
+		507D4FC0245E52A30019C25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RQ632LL2X3;
+				INFOPLIST_FILE = AfterpartyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.okun.AfterpartyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Afterparty;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		507D4F86245E52A20019C25C /* Build configuration list for PBXProject "Afterparty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507D4FB6245E52A30019C25C /* Debug */,
+				507D4FB7245E52A30019C25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		507D4FB8245E52A30019C25C /* Build configuration list for PBXNativeTarget "Afterparty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507D4FB9245E52A30019C25C /* Debug */,
+				507D4FBA245E52A30019C25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		507D4FBB245E52A30019C25C /* Build configuration list for PBXNativeTarget "AfterpartyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507D4FBC245E52A30019C25C /* Debug */,
+				507D4FBD245E52A30019C25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		507D4FBE245E52A30019C25C /* Build configuration list for PBXNativeTarget "AfterpartyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507D4FBF245E52A30019C25C /* Debug */,
+				507D4FC0245E52A30019C25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		507D4F92245E52A20019C25C /* Afterparty.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				507D4F93245E52A20019C25C /* Afterparty.xcdatamodel */,
+			);
+			currentVersion = 507D4F93245E52A20019C25C /* Afterparty.xcdatamodel */;
+			path = Afterparty.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 507D4F83245E52A20019C25C /* Project object */;
+}
