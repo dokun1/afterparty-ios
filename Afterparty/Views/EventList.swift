@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
+import afterparty_models_swift
 
 struct EventList: View {
-  @State var events = ["Party 1", "Party 2", "OMG Party"]
+  @State var events = MockData.sampleEvents
     var body: some View {
-      List(events, id: \.self) { event in
-        Text(event)
+      List(events) { event in
+        Text(event.name)
       }
     }
 }

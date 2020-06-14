@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		507D4FA9245E52A30019C25C /* AfterpartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FA8245E52A30019C25C /* AfterpartyTests.swift */; };
 		507D4FB4245E52A30019C25C /* AfterpartyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FB3245E52A30019C25C /* AfterpartyUITests.swift */; };
 		507D4FC2245E5C0D0019C25C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 507D4FC1245E5C0D0019C25C /* GoogleService-Info.plist */; };
+		50B74B5B2496A56E00C461CD /* afterparty-models-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 50B74B5A2496A56E00C461CD /* afterparty-models-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B74B5B2496A56E00C461CD /* afterparty-models-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +301,9 @@
 			dependencies = (
 			);
 			name = Afterparty;
+			packageProductDependencies = (
+				50B74B5A2496A56E00C461CD /* afterparty-models-swift */,
+			);
 			productName = Afterparty;
 			productReference = 507D4F8B245E52A20019C25C /* Afterparty.app */;
 			productType = "com.apple.product-type.application";
@@ -372,6 +377,9 @@
 				Base,
 			);
 			mainGroup = 507D4F82245E52A20019C25C;
+			packageReferences = (
+				50B74B592496A56E00C461CD /* XCRemoteSwiftPackageReference "afterparty-models-swift" */,
+			);
 			productRefGroup = 507D4F8C245E52A20019C25C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -808,6 +816,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		50B74B592496A56E00C461CD /* XCRemoteSwiftPackageReference "afterparty-models-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dokun1/afterparty-models-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		50B74B5A2496A56E00C461CD /* afterparty-models-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50B74B592496A56E00C461CD /* XCRemoteSwiftPackageReference "afterparty-models-swift" */;
+			productName = "afterparty-models-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		507D4F92245E52A20019C25C /* Afterparty.xcdatamodeld */ = {
