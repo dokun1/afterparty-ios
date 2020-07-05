@@ -1,0 +1,20 @@
+name: Build & Deploy Latest App
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Clean & Build App
+      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos clean build
+    - name: Create Archive
+      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos -archivePath .$GITHUB_WORKSPACE/Afterparty.xcarchive archive
+    - name: Export Archive
+      run: xcodebuild -exportArchive -archivePath build/Afterparty.xcarchive -exportOptionsPlist ./ExportOptions.plist -exportPath $GITHUB_WORKSPACE/Afterparty
