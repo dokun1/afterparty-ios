@@ -17,7 +17,7 @@ jobs:
     - name: Decrypt secrets
       run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
     - name: Debug list profiles
-      run: "ls ~/Library/MobileDevice/Provisioning\ Profiles/"
+      run: "ls ~/Library/MobileDevice/Provisioning Profiles/"
     - name: Clean & Build App
       run: ./build-app.sh
     - name: Create Archive
