@@ -16,6 +16,8 @@ jobs:
       run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
     - name: Decrypt secrets
       run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
+    - name: Debug list profiles
+      run: "ls ~/Library/MobileDevice/Provisioning\ Profiles/"
     - name: Clean & Build App
       run: ./build-app.sh
     - name: Create Archive
