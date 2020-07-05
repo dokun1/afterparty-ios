@@ -17,7 +17,7 @@ jobs:
     - name: Decrypt secrets
       run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
     - name: Clean & Build App
-      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos clean build
+      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos clean build -allowProvisioningUpdates
     - name: Create Archive
       run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos -archivePath .$GITHUB_WORKSPACE/Afterparty.xcarchive archive
     - name: Export Archive
