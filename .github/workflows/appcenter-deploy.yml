@@ -16,9 +16,9 @@ jobs:
       run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
     - name: Decrypt secrets
       run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
-    - name: Clean & Build App
-      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos clean build -allowProvisioningUpdates
+    # - name: Clean & Build App
+    #   run: xcodebuild -scheme "Afterparty Prod" -target Afterparty -sdk iphoneos -configuration AdHocDistribution clean build
     - name: Create Archive
-      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos -archivePath .$GITHUB_WORKSPACE/Afterparty.xcarchive archive
+      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos -target Afterparty -archivePath .$GITHUB_WORKSPACE/Afterparty.xcarchive archive
     - name: Export Archive
       run: xcodebuild -exportArchive -archivePath build/Afterparty.xcarchive -exportOptionsPlist ./ExportOptions.plist -exportPath $GITHUB_WORKSPACE/Afterparty
