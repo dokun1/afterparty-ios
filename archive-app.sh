@@ -6,5 +6,5 @@ xcodebuild -scheme "Afterparty Prod" \
            -sdk iphoneos \
            -target Afterparty \
            -archivePath ./Afterparty.xcarchive \
-           -exportProvisioningProfile "AfterpartyAdHoc.mobileprovision" \
+           -allowProvisioningUpdates -allowProvisioningDeviceRegistration \
             build archive | xcpretty

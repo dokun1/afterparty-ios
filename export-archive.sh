@@ -3,7 +3,7 @@
 set -eo pipefail
 
 xcodebuild -exportArchive \ 
-           -exportProvisioningProfile "AfterpartyAdHoc.mobileprovision" \
+           -allowProvisioningUpdates -allowProvisioningDeviceRegistration \
            -archivePath ./Afterparty.xcarchive \
            -exportOptionsPlist ./ExportOptions.plist \
            -exportPath ./AfterpartyProducts | xcpretty
