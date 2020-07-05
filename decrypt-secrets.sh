@@ -7,8 +7,8 @@ IOS_PROJECT_KEYS=${1}
 echo "========================================"
 echo "Decrypting certs and profiles..."
 
-gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/Afterparty_2020_Ad_Hoc_Profile.mobileprovision ./.github/secrets/Afterparty_2020_Ad_Hoc_Profile.mobileprovision.gpg
-gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/AfterpartyAdHocDistributionCert.p12 ./.github/secrets/AfterpartyAdHocDistributionCert.p12.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/AfterpartyAdHoc.mobileprovision ./.github/secrets/AfterpartyAdHoc.mobileprovision.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/Certificates.p12 ./.github/secrets/Certificates.p12.gpg
 
 echo "========================================"
 echo "Making Provisioning Profiles directory..."
@@ -18,7 +18,7 @@ mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 echo "========================================"
 echo "Copying provisioning profile..."
 
-cp ./.github/secrets/Afterparty_2020_Ad_Hoc_Profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/Afterparty_2020_Ad_Hoc_Profile.mobileprovision
+cp ./.github/secrets/AfterpartyAdHoc.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/AfterpartyAdHoc.mobileprovision
 
 echo "========================================"
 echo "Creating keychain..."
@@ -28,7 +28,7 @@ security create-keychain -p "" build.keychain
 echo "========================================"
 echo "Importing certs into keychain..."
 
-security import ./.github/secrets/AfterpartyAdHocDistributionCert.p12 -t agg -k ~/Library/Keychains/build.keychain -P $IOS_PROJECT_KEYS -A
+security import ./.github/secrets/Certificates.p12 -t agg -k ~/Library/Keychains/build.keychain -P $IOS_PROJECT_KEYS -A
 
 echo "========================================"
 echo "Unlocking main keychain..."
