@@ -11,15 +11,16 @@ import afterparty_models_swift
 
 struct EventList: View {
   @State var events = MockData.sampleEvents
-    var body: some View {
-      List(events) { event in
-        Text(event.name)
-      }
+  
+  var body: some View {
+    List(events) { event in
+      Text(event.name)
     }
+  }
 }
 
 struct EventList_Previews: PreviewProvider {
-    static var previews: some View {
-        EventList()
-    }
+  static var previews: some View {
+    EventList()
+  }
 }

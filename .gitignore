@@ -88,3 +88,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# configs
+
+Afterparty/Config/Environment/Staging.xcconfig
+Afterparty/Config/Environment/Dev.xcconfig
+Afterparty/Config/Environment/Prod.xcconfig

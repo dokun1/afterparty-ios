@@ -16,7 +16,7 @@ struct NearbyEvents: View {
           .frame(height: 200, alignment: .top)
         
         VStack {
-          EventList()
+          EventList().listStyle(GroupedListStyle())
         }
       }.navigationBarTitle("Nearby")
     }

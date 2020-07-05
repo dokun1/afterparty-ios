@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "afterparty-models-swift",
+        "repositoryURL": "https://github.com/dokun1/afterparty-models-swift",
+        "state": {
+          "branch": null,
+          "revision": "2022d960561e0da3020ef732df5a855ac4b4d1d6",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

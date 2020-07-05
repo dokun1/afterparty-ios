@@ -8,14 +8,17 @@
 
 import UIKit
 import CoreData
-//import FirebaseCore
+import AppCenter
+import AppCenterDistribute
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
-    //FirebaseApp.configure()
+    print(EnvironmentVariables.rootURL)
+    MSAppCenter.start(EnvironmentVariables.appCenterSecret, withServices: [
+      MSDistribute.self
+    ])
     return true
   }
 
