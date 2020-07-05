@@ -19,6 +19,6 @@ jobs:
     # - name: Clean & Build App
     #   run: xcodebuild -scheme "Afterparty Prod" -target Afterparty -sdk iphoneos -configuration AdHocDistribution clean build
     - name: Create Archive
-      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos -target Afterparty -archivePath .$GITHUB_WORKSPACE/Afterparty.xcarchive archive
+      run: xcodebuild -scheme "Afterparty Prod" -sdk iphoneos -target Afterparty -allowProvisioningUpdates -archivePath .$GITHUB_WORKSPACE/Afterparty.xcarchive archive | xcpretty
     - name: Export Archive
-      run: xcodebuild -exportArchive -archivePath build/Afterparty.xcarchive -exportOptionsPlist ./ExportOptions.plist -exportPath $GITHUB_WORKSPACE/Afterparty
+      run: xcodebuild -exportArchive -archivePath build/Afterparty.xcarchive -allowProvisioningUpdates -exportOptionsPlist ./ExportOptions.plist -exportPath $GITHUB_WORKSPACE/Afterparty | xcpretty
