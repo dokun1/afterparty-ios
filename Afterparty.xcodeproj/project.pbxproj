@@ -189,7 +189,6 @@
 			children = (
 				504C2EA624659E590012DA56 /* Afterparty.entitlements */,
 				507D4FC6245E5E030019C25C /* Config */,
-				507D4FC4245E5DE40019C25C /* Dependencies */,
 				507D4FC3245E5DDD0019C25C /* Model */,
 				507D4FC7245E5E0F0019C25C /* Views */,
 				507D4F9F245E52A30019C25C /* Info.plist */,
@@ -231,13 +230,6 @@
 				50EA4F4624B2116C00A1D76C /* API.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		507D4FC4245E5DE40019C25C /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		507D4FC6245E5E030019C25C /* Config */ = {
@@ -657,22 +649,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
@@ -709,22 +685,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
@@ -910,22 +870,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
@@ -1064,22 +1008,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
@@ -1223,22 +1151,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
@@ -1375,22 +1287,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseAnalytics",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebasePerformance",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLModelInterpreter",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLSmartReply",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionTextModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionFaceModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/Google-Mobile-Ads-SDK",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLTranslate",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNLLanguageID",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLNaturalLanguage",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionAutoML",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionLabelModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/GoogleSignIn",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionObjectDetection",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVisionBarcodeModel",
-					"$(PROJECT_DIR)/Afterparty/Dependencies/Firebase/FirebaseMLVision",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
