@@ -6,4 +6,4 @@ xcodebuild -scheme "Afterparty Prod" \
            -sdk iphoneos \
            -target Afterparty \
            -archivePath ./Afterparty.xcarchive \
-            archive | xcpretty
+            build archive | xcpretty
