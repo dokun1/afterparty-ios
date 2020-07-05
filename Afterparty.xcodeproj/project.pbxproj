@@ -26,6 +26,9 @@
 		50DB28C824B158CE00F80E0A /* AppCenterDistribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DB28C624B158CE00F80E0A /* AppCenterDistribute.framework */; };
 		50DB28C924B158CE00F80E0A /* AppCenterDistributeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50DB28C724B158CE00F80E0A /* AppCenterDistributeResources.bundle */; };
 		50EA4F4524B168F200A1D76C /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA4F4424B168F200A1D76C /* EnvironmentVariables.swift */; };
+		50EA4F4724B2116C00A1D76C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA4F4624B2116C00A1D76C /* API.swift */; };
+		50EA4F4B24B217E100A1D76C /* MyEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA4F4A24B217E100A1D76C /* MyEventsViewModel.swift */; };
+		50EA4F4D24B2237A00A1D76C /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA4F4C24B2237A00A1D76C /* EventDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,9 @@
 		50EA4F3524B1652100A1D76C /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
 		50EA4F4324B1673C00A1D76C /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		50EA4F4424B168F200A1D76C /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
+		50EA4F4624B2116C00A1D76C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		50EA4F4A24B217E100A1D76C /* MyEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewModel.swift; sourceTree = "<group>"; };
+		50EA4F4C24B2237A00A1D76C /* EventDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				504C2CEE2464EE8E0012DA56 /* MyEvents.swift */,
+				50EA4F4A24B217E100A1D76C /* MyEventsViewModel.swift */,
 			);
 			path = "My Events";
 			sourceTree = "<group>";
@@ -221,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				507D4F92245E52A20019C25C /* Afterparty.xcdatamodeld */,
+				50EA4F4624B2116C00A1D76C /* API.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				507D4F9C245E52A30019C25C /* LaunchScreen.storyboard */,
 				507D4F97245E52A30019C25C /* Assets.xcassets */,
 				504C2EA02464FD400012DA56 /* EventList.swift */,
+				50EA4F4C24B2237A00A1D76C /* EventDetails.swift */,
 				504C2CE92464EDE50012DA56 /* Nearby Events */,
 				504C2CF22464EEA10012DA56 /* My Events */,
 				504C2CF32464EEA60012DA56 /* Settings */,
@@ -457,12 +466,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EA4F4724B2116C00A1D76C /* API.swift in Sources */,
+				50EA4F4B24B217E100A1D76C /* MyEventsViewModel.swift in Sources */,
 				507D4F94245E52A20019C25C /* Afterparty.xcdatamodeld in Sources */,
 				504C2E9F2464F6230012DA56 /* MapView.swift in Sources */,
 				504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */,
 				50EA4F4524B168F200A1D76C /* EnvironmentVariables.swift in Sources */,
 				504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */,
 				504C2CF12464EE980012DA56 /* MySettings.swift in Sources */,
+				50EA4F4D24B2237A00A1D76C /* EventDetails.swift in Sources */,
 				507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */,
 				504C2EA12464FD400012DA56 /* EventList.swift in Sources */,
 				507D4F96245E52A20019C25C /* HomeView.swift in Sources */,
@@ -1043,6 +1055,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Afterparty/Afterparty.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
 				DEVELOPMENT_TEAM = RQ632LL2X3;
@@ -1080,6 +1094,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Afterparty/Config/Afterparty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

@@ -8,13 +8,21 @@
 
 import SwiftUI
 import afterparty_models_swift
+import Combine
 
 struct EventList: View {
   @State var events = MockData.sampleEvents
+  @ObservedObject var viewModel = MyEventsViewModel()
   
   var body: some View {
-    List(events) { event in
-      Text(event.name)
+    List(self.viewModel.myEvents) { event in
+      NavigationLink(destination: EventDetails(event: event)) {
+        Text(event.name)
+      }
+    }.onAppear {
+      self.viewModel.getEvents(for: User(email: "david@okun.io"))
+    }.alert(item: self.$viewModel.error) { error in
+      Alert(title: Text("Network Error"), message: Text(error.localizedDescription), dismissButton: .cancel())
     }
   }
 }
