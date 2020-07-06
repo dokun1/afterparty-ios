@@ -3,7 +3,7 @@
 set -eo pipefail
 
 xcodebuild -scheme "Afterparty Prod" \
-           -destination generic/platform=iOS \
+           -sdk iphoneos \
            -target Afterparty \
            -archivePath ./Afterparty.xcarchive \
             build archive | xcpretty
