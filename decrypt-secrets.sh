@@ -43,6 +43,11 @@ echo "Setting key partition..."
 security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
 
 echo "========================================"
-echo "Available Provisioning Profiles:"
+echo "Available Certificates:"
 
 security find-identity -p codesigning -v
+
+echo "========================================"
+echo "Available Provisioning Profiles:"
+
+ls ~/Library/MobileDevice/Provisioning\ Profiles/
