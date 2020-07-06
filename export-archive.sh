@@ -2,6 +2,8 @@
 
 set -eo pipefail
 
-xcodebuild -exportArchive -archivePath ./Afterparty.xcarchive \
+xcodebuild -archivePath ./Afterparty.xcarchive \
            -exportOptionsPlist ./ExportOptions.plist \
-           -exportPath ./AfterpartyProducts | xcpretty
+           -exportPath ./AfterpartyProducts \
+           -allowProvisioningUpdates \
+           -exportArchive  | xcpretty

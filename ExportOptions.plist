@@ -4,16 +4,15 @@
 <dict>
 	<key>compileBitcode</key>
 	<true/>
-	<key>destination</key>
-	<string>export</string>
 	<key>method</key>
 	<string>ad-hoc</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.okun.afterparty</key>
+		<string>Afterparty 2020 Ad Hoc Profile</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>iOS Distribution: RQ632LL2X3</string>
+	<string>835A7666E2E62278724BEBBA388B6A799A659B64</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
