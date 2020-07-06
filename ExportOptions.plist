@@ -11,10 +11,9 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.okun.afterparty</key>
-		<string>AfterpartyAdHoc</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>835A7666E2E62278724BEBBA388B6A799A659B64</string>
+	<string>iOS Distribution: RQ632LL2X3</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
