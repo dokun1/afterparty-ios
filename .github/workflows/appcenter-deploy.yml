@@ -13,11 +13,6 @@ jobs:
     steps:
       
     - uses: actions/checkout@master
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '12'
-        check-latest: true
     - name: Inject Prod Configuration
       run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
     - name: Decrypt secrets
@@ -28,6 +23,10 @@ jobs:
       run: ./archive-app.sh
     - name: Export Archive
       run: ./export-archive.sh
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+        check-latest: true
     - name: Install App Center CLI
       run: npm install -g appcenter-cli
     
