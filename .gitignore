@@ -95,3 +95,5 @@ Afterparty/Config/Environment/Staging.xcconfig
 Afterparty/Config/Environment/Dev.xcconfig
 Afterparty/Config/Environment/Prod.xcconfig
 build/
+AfterpartyProducts/
+Afterparty.xcarchive
