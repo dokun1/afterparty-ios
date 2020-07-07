@@ -31,6 +31,20 @@ public enum EnvironmentVariables {
     return appCenterSecretString
   }()
   
+  static let rootURLString: String = {
+    guard let rootURLString = EnvironmentVariables.infoDictionary[Keys.Plist.rootURL] as? String else {
+      fatalError("Root URL not set in plist for this environment")
+    }
+    return rootURLString
+  }()
+  
+  static let rootURLScheme: String = {
+    guard let rootURLScheme = EnvironmentVariables.infoDictionary[Keys.Plist.rootURLScheme] as? String else {
+      fatalError("Root URL scheme not set in plist for this environment")
+    }
+    return rootURLScheme
+  }()
+  
   static let rootURL: URL = {
     guard let rootURLString = EnvironmentVariables.infoDictionary[Keys.Plist.rootURL] as? String,
           let rootURLScheme = EnvironmentVariables.infoDictionary[Keys.Plist.rootURLScheme] as? String else {
@@ -40,7 +54,7 @@ public enum EnvironmentVariables {
     components.scheme = rootURLScheme
     components.host = rootURLString
     guard let url = components.url else {
-      fatalError("Could non construct root url")
+      fatalError("Could not construct root url")
     }
     return url
   }()

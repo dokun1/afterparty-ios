@@ -9,17 +9,26 @@
 import SwiftUI
 
 struct MyEvents: View {
+  @State private var shouldShowAlert = false
   var body: some View {
     NavigationView {
       EventList()
         .navigationBarItems(trailing:
           Button(action: {
-            print("new event button tapped")
+            shouldShowAlert = true
           }, label: {
             Image(systemName: "plus")
           })
       )
         .navigationBarTitle("My Events")
+    }.alert(isPresented: $shouldShowAlert) {
+      Alert(title: Text("Debug Information"),
+            message: Text("""
+              root url scheme: \(EnvironmentVariables.rootURLScheme)
+              root url string: \(EnvironmentVariables.rootURLString)
+              full root url: \(String(EnvironmentVariables.rootURL.absoluteString))
+              """),
+            dismissButton: .cancel())
     }
     
   }
