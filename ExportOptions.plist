@@ -4,12 +4,12 @@
 <dict>
 	<key>compileBitcode</key>
 	<true/>
-	<key>method</key>
-	<string>ad-hoc</string>
+	<!-- <key>method</key>
+	<string>ad-hoc</string> -->
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.okun.afterparty</key>
-		<string>Afterparty 2020 Ad Hoc Profile</string>
+		<string>AfterpartyAdHoc</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>835A7666E2E62278724BEBBA388B6A799A659B64</string>
