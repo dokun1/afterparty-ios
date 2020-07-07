@@ -3,13 +3,15 @@
 appCenterSecret=${1}
 appCenterURLScheme=${2}
 rootURL=${3}
-appName=${4}
-appBundleID=${5}
+rootURLScheme=${4}
+appName=${5}
+appBundleID=${6}
 
 echo '
 MS_APP_CENTER_SECRET = '$appCenterSecret'
 MS_APP_CENTER_URL_SCHEME = '$appCenterURLScheme'
 ROOT_URL = '$rootURL'
+ROOT_URL_SCHEME = '$rootURLScheme'
 
 APP_NAME = '$appName'
 APP_BUNDLE_ID = '$appBundleID'
