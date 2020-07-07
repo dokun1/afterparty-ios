@@ -13,6 +13,7 @@ public enum EnvironmentVariables {
     enum Plist {
       static let appCenterSecret = "MS_APP_CENTER_SECRET"
       static let rootURL = "ROOT_URL"
+      static let rootURLScheme = "ROOT_URL_SCHEME"
     }
   }
   
@@ -31,10 +32,11 @@ public enum EnvironmentVariables {
   }()
   
   static let rootURL: URL = {
-    guard let rootURLString = EnvironmentVariables.infoDictionary[Keys.Plist.rootURL] as? String else {
+    guard let rootURLString = EnvironmentVariables.infoDictionary[Keys.Plist.rootURL] as? String,
+          let rootURLScheme = EnvironmentVariables.infoDictionary[Keys.Plist.rootURLScheme] as? String else {
       fatalError("Root URL not set in plist for this environment")
     }
-    guard let url = URL(string: rootURLString) else {
+    guard let url = URL(string: "\(rootURLScheme)://\(rootURLString)") else {
       fatalError("Could non construct root url")
     }
     return url
