@@ -18,7 +18,7 @@ struct NearbyEvents: View {
         VStack {
           EventList().listStyle(GroupedListStyle())
         }
-      }.navigationBarTitle("What's Going On?")
+      }.navigationBarTitle("Nearby Events")
     }
   }
 }

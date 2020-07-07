@@ -23,10 +23,10 @@ struct EventDetails: View {
       VStack {
         MapView(event: event).frame(height: 200, alignment: .top)
         Form {
-          Section(header: Text("Start Time")) {
+          Section(header: Text("When Does It Start?")) {
             Text(formatter.string(from: event.start))
           }
-          Section(header: Text("End Time")) {
+          Section(header: Text("When Does It End?")) {
             Text(formatter.string(from: event.end))
           }
         }
