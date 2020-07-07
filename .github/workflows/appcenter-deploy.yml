@@ -21,12 +21,12 @@ jobs:
       run: ./build-app.sh
     - name: Create Archive
       run: ./archive-app.sh
-    - name: Export Archive
-      run: ./export-archive.sh
     - uses: actions/setup-node@v1
       with:
         node-version: '12'
         check-latest: true
     - name: Install App Center CLI
       run: npm install -g appcenter-cli
+    - name: Export Archive
+      run: ./export-archive.sh
     
