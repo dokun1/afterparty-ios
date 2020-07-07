@@ -36,7 +36,10 @@ public enum EnvironmentVariables {
           let rootURLScheme = EnvironmentVariables.infoDictionary[Keys.Plist.rootURLScheme] as? String else {
       fatalError("Root URL not set in plist for this environment")
     }
-    guard let url = URL(string: "\(rootURLScheme)://\(rootURLString)") else {
+    var components = URLComponents()
+    components.scheme = rootURLScheme
+    components.host = rootURLString
+    guard let url = components.url else {
       fatalError("Could non construct root url")
     }
     return url
