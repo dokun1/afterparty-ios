@@ -15,7 +15,7 @@ struct MyEvents: View {
       EventList()
         .navigationBarItems(trailing:
           Button(action: {
-            shouldShowAlert = true
+            self.shouldShowAlert = true
           }, label: {
             Image(systemName: "plus")
           })
