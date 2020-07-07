@@ -27,10 +27,10 @@ jobs:
         check-latest: true
     - name: Install App Center CLI
       run: npm install -g appcenter-cli
+    - name: Login to App Center
+      run: appcenter login --token ${{ secrets.APP_CENTER_CLI_TOKEN }}
     - name: Set up App Center context
-      run: 
-        appcenter login --token ${{ secrets.APP_CENTER_CLI_TOKEN }}
-        appcenter apps set-current afterparty/afterparty-ios
+      run: appcenter apps set-current afterparty/afterparty-ios
     - name: Export Archive
       run: ./export-archive.sh
     - name: Upload Build
