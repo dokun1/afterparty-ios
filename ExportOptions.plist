@@ -4,8 +4,8 @@
 <dict>
 	<key>compileBitcode</key>
 	<true/>
-	<!-- <key>method</key>
-	<string>ad-hoc</string> -->
+	<key>method</key>
+	<string>ad-hoc</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.okun.afterparty</key>
