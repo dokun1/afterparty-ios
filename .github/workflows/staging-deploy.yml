@@ -10,7 +10,7 @@ jobs:
     name: Build for iOS
     runs-on: macos-10.15
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     
     - name: Inject staging configuration
       run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
@@ -26,7 +26,7 @@ jobs:
     name: Test for iOS
     needs: ios_build
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
 
       - name: Inject staging configuration
         run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
@@ -43,7 +43,7 @@ jobs:
     needs: ios_test
     steps:
 
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
 
       - name: Inject staging configuration
         run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
