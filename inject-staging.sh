@@ -17,4 +17,4 @@ ROOT_URL_PORT = '$rootUrlPort'
 
 APP_NAME = '$appName'
 APP_BUNDLE_ID = '$appBundleID'
-' > ./Afterparty/Config/Environment/Prod.xcconfig
+' > ./Afterparty/Config/Environment/Staging.xcconfig

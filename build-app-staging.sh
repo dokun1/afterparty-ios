@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-xcodebuild -scheme "Afterparty Prod" \
+xcodebuild -scheme "Afterparty Staging" \
            -target Afterparty \
            -sdk iphonesimulator \
-            clean build | xcpretty
+            clean build

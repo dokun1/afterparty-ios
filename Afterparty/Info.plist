@@ -68,10 +68,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>ROOT_URL</key>
-	<string>$(ROOT_URL)</string>
+	<key>ROOT_URL_HOST</key>
+	<string>$(ROOT_URL_HOST)</string>
 	<key>ROOT_URL_SCHEME</key>
 	<string>$(ROOT_URL_SCHEME)</string>
+	<key>ROOT_URL_PORT</key>
+	<string>$(ROOT_URL_PORT)</string>
 	<key>MS_APP_CENTER_SECRET</key>
 	<string>$(MS_APP_CENTER_SECRET)</string>
 </dict>

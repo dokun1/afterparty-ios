@@ -7,4 +7,4 @@ xcodebuild -project Afterparty.xcodeproj \
            -sdk iphoneos \
            -archivePath ./Afterparty.xcarchive \
            -configuration "Release Prod" \
-           clean archive | xcpretty
+           clean archive

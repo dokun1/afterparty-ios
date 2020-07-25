@@ -1,0 +1,76 @@
+name: Prod Deployment Pipeline
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+  ios_build:
+    name: Build for iOS
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Inject staging configuration
+      run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+
+    - name: Decrypt secrets
+      run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
+
+    - name: Clean & Build App
+      run: ./build-app-staging.sh
+  
+  ios_test:
+    runs-on: macos-10.15
+    name: Test for iOS
+    needs: ios_build
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Inject staging configuration
+        run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+
+      - name: Decrypt secrets
+        run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
+
+      - name: Run iOS sim tests
+        run: ./test-app-staging.sh
+
+  ios_prod_deploy:
+    runs-on: macos-10.15
+    name: Deploy for iOS to Prod
+    needs: ios_test
+    steps:
+
+      - uses: actions/checkout@master
+
+      - name: Inject staging configuration
+        run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+
+      - name: Decrypt secrets
+        run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
+
+      - name: Create Archive
+        run: ./archive-app-prod.sh
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+          check-latest: true
+
+      - name: Install App Center CLI
+        run: npm install -g appcenter-cli
+
+      - name: Login to App Center
+        run: appcenter login --token ${{ secrets.APP_CENTER_CLI_TOKEN }}
+
+      - name: Set up App Center context
+        run: appcenter apps set-current afterparty/afterparty-ios
+
+      - name: Export Archive
+        run: ./export-archive.sh
+
+      - name: Upload Build
+        run: "appcenter distribute release --file './AfterpartyProducts/Afterparty Prod.ipa' --group Collaborators"
+    
