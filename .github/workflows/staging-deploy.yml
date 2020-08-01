@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@main
     
     - name: Inject staging configuration
-      run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+      run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET }} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_URL_PORT }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
 
     - name: Decrypt secrets
       run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@main
 
       - name: Inject staging configuration
-        run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+        run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET }} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_URL_PORT }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
 
       - name: Decrypt secrets
         run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
@@ -46,7 +46,7 @@ jobs:
       - uses: actions/checkout@main
 
       - name: Inject staging configuration
-        run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
+        run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET }} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_URL_PORT }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
 
       - name: Decrypt secrets
         run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
