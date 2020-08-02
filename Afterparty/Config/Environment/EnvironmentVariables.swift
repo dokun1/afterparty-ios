@@ -47,13 +47,11 @@ public enum EnvironmentVariables {
   }()
   
   static let rootURLPort: Int = {
-    guard let rootURLPort = EnvironmentVariables.infoDictionary[Keys.Plist.rootURLPort] as? String else {
-      fatalError("Root URL Port not set in plist for this environment")
+    if rootURLHost == "localhost" {
+      return 8080
+    } else {
+      return 80
     }
-    guard let port = Int(rootURLPort) else {
-      fatalError("Could not cast url port to Integer")
-    }
-    return port
   }()
   
   static let rootURL: URL = {
