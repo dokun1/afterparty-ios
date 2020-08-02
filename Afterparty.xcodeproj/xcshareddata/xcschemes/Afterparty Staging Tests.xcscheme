@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Afterparty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "507D4F8A245E52A20019C25C"
+               BuildableName = "Afterparty.app"
+               BlueprintName = "Afterparty"
+               ReferencedContainer = "container:Afterparty.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -57,15 +71,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "507D4FA3245E52A30019C25C"
-            BuildableName = "AfterpartyTests.xctest"
-            BlueprintName = "AfterpartyTests"
-            ReferencedContainer = "container:Afterparty.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug Staging">
