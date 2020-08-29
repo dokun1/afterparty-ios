@@ -8,6 +8,7 @@ echo "========================================"
 echo "Decrypting certs and profiles..."
 
 gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/AfterpartyAdHoc.mobileprovision ./.github/secrets/AfterpartyAdHoc.mobileprovision.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/AfterpartyAdHocStaging.mobileprovision ./.github/secrets/AfterpartyAdHocStaging.mobileprovision.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/AfterpartyDev.mobileprovision ./.github/secrets/AfterpartyDev.mobileprovision.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/AfterpartyAppStore.mobileprovision ./.github/secrets/AfterpartyAppStore.mobileprovision.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="$IOS_PROJECT_KEYS" --output ./.github/secrets/Certificates.p12 ./.github/secrets/Certificates.p12.gpg
@@ -21,6 +22,7 @@ echo "========================================"
 echo "Copying provisioning profile..."
 
 cp ./.github/secrets/AfterpartyAdHoc.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/AfterpartyAdHoc.mobileprovision
+cp ./.github/secrets/AfterpartyAdHocStaging.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/AfterpartyAdHocStaging.mobileprovision
 cp ./.github/secrets/AfterpartyDev.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/AfterpartyDev.mobileprovision
 cp ./.github/secrets/AfterpartyAppStore.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/AfterpartyAppStore.mobileprovision
 

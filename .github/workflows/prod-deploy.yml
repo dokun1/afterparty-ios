@@ -69,7 +69,7 @@ jobs:
         run: appcenter apps set-current afterparty/afterparty-ios
 
       - name: Export Archive
-        run: ./export-archive.sh
+        run: ./export-archive-prod.sh
 
       - name: Upload Build
         run: "appcenter distribute release --file './AfterpartyProducts/Afterparty Prod.ipa' --group Collaborators"
