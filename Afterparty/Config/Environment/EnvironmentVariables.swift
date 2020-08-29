@@ -12,8 +12,9 @@ public enum EnvironmentVariables {
   enum Keys {
     enum Plist {
       static let appCenterSecret = "MS_APP_CENTER_SECRET"
-      static let rootURL = "ROOT_URL"
+      static let rootURLHost = "ROOT_URL_HOST"
       static let rootURLScheme = "ROOT_URL_SCHEME"
+      static let rootURLPort = "ROOT_URL_PORT"
     }
   }
   
@@ -31,11 +32,11 @@ public enum EnvironmentVariables {
     return appCenterSecretString
   }()
   
-  static let rootURLString: String = {
-    guard let rootURLString = EnvironmentVariables.infoDictionary[Keys.Plist.rootURL] as? String else {
-      fatalError("Root URL not set in plist for this environment")
+  static let rootURLHost: String = {
+    guard let rootURLHost = EnvironmentVariables.infoDictionary[Keys.Plist.rootURLHost] as? String else {
+      fatalError("Root URL host not set in plist for this environment")
     }
-    return rootURLString
+    return rootURLHost
   }()
   
   static let rootURLScheme: String = {
@@ -45,14 +46,21 @@ public enum EnvironmentVariables {
     return rootURLScheme
   }()
   
-  static let rootURL: URL = {
-    guard let rootURLString = EnvironmentVariables.infoDictionary[Keys.Plist.rootURL] as? String,
-          let rootURLScheme = EnvironmentVariables.infoDictionary[Keys.Plist.rootURLScheme] as? String else {
-      fatalError("Root URL not set in plist for this environment")
+  static let rootURLPort: Int = {
+    if rootURLHost == "localhost" {
+      return 8080
+    } else {
+      return 80
     }
+  }()
+  
+  static let rootURL: URL = {
     var components = URLComponents()
     components.scheme = rootURLScheme
-    components.host = rootURLString
+    components.host = rootURLHost
+    if rootURLPort != 80 {
+      components.port = rootURLPort
+    }
     guard let url = components.url else {
       fatalError("Could not construct root url")
     }

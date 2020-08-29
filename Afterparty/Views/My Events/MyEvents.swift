@@ -25,7 +25,8 @@ struct MyEvents: View {
       Alert(title: Text("Debug Information"),
             message: Text("""
               root url scheme: \(EnvironmentVariables.rootURLScheme)
-              root url string: \(EnvironmentVariables.rootURLString)
+              root url host: \(EnvironmentVariables.rootURLHost)
+              root url port: \(EnvironmentVariables.rootURLPort)
               full root url: \(String(EnvironmentVariables.rootURL.absoluteString))
               """),
             dismissButton: .cancel())

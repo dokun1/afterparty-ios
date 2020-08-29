@@ -15,4 +15,4 @@ ROOT_URL_SCHEME = '$rootURLScheme'
 
 APP_NAME = '$appName'
 APP_BUNDLE_ID = '$appBundleID'
-' > ./Afterparty/Config/Environment/Prod.xcconfig
+' > ./Afterparty/Config/Environment/Staging.xcconfig

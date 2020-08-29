@@ -13,7 +13,11 @@ import afterparty_models_swift
 class AfterpartyAPI {
   private var session = URLSession(configuration: .default)
   private let apiQueue = DispatchQueue(label: "AfterpartyAPI", qos: .default, attributes: .concurrent)
-  private let decoder = JSONDecoder()
+  private let decoder: JSONDecoder = {
+    let decoder = JSONDecoder()
+    decoder.dateDecodingStrategy = .iso8601
+    return decoder
+  }()
   
   private static let timeoutInterval = 10.0
   
@@ -46,11 +50,11 @@ class AfterpartyAPI {
             return EnvironmentVariables.rootURL.appendingPathComponent("hello")
           }
         case .mockEvents:
-          return EnvironmentVariables.rootURL.appendingPathComponent("mockEvents")
+          return EnvironmentVariables.rootURL.appendingPathComponent("mock/events")
         case .mockUsers:
-          return EnvironmentVariables.rootURL.appendingPathComponent("mockUsers")
+          return EnvironmentVariables.rootURL.appendingPathComponent("mock/users")
         case .mockLocations:
-          return EnvironmentVariables.rootURL.appendingPathComponent("mockLocations")
+          return EnvironmentVariables.rootURL.appendingPathComponent("mock/locations")
       }
     }
     
@@ -95,7 +99,9 @@ class AfterpartyAPI {
   func getMockEvents() -> AnyPublisher<[Event], Error> {
     session.dataTaskPublisher(for: Endpoint.mockEvents.request)
       .receive(on: apiQueue)
-      .map { $0.data }
+      .map {
+        $0.data
+      }
       .decode(type: [Event].self, decoder: decoder)
       .mapError { error in
         switch error {
