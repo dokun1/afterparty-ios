@@ -12,8 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@main
     
-    - name: Inject staging configuration
-      run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_URL_PORT }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+    - name: Inject prod configuration
+      run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
 
     - name: Decrypt secrets
       run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
@@ -28,14 +28,14 @@ jobs:
     steps:
       - uses: actions/checkout@main
 
-      - name: Inject staging configuration
-        run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_URL_PORT }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+      - name: Inject prod configuration
+        run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
 
       - name: Decrypt secrets
         run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
 
       - name: Run iOS sim tests
-        run: ./test-app-staging.sh
+        run: ./test-app-prod.sh
 
   ios_prod_deploy:
     runs-on: macos-10.15
@@ -45,8 +45,8 @@ jobs:
 
       - uses: actions/checkout@main
 
-      - name: Inject staging configuration
-        run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_URL_PORT }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
+      - name: Inject prod configuration
+        run: ./inject-prod.sh ${{ secrets.MS_APP_CENTER_SECRET}} ${{ secrets.MS_APP_CENTER_URL_SCHEME }} ${{ secrets.PROD_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.PROD_APP_NAME }} ${{ secrets.PROD_APP_BUNDLE_ID }}
 
       - name: Decrypt secrets
         run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
