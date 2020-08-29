@@ -4,8 +4,8 @@ appCenterSecret=${1}
 appCenterURLScheme=${2}
 rootURLHost=${3}
 rootURLScheme=${4}
-appName=${6}
-appBundleID=${7}
+appName=${5}
+appBundleID=${6}
 
 echo '
 MS_APP_CENTER_SECRET = '$appCenterSecret'
