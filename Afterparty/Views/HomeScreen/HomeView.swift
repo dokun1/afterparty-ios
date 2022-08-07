@@ -25,12 +25,6 @@ struct HomeView: View {
           Text("My Events")
       }
       .tag(1)
-      MySettings()
-        .tabItem {
-          Image(systemName: "person.fill")
-          Text("Settings")
-      }
-      .tag(2)
     }
   }
 }

@@ -15,15 +15,20 @@ struct EventList: View {
   @ObservedObject var viewModel = MyEventsViewModel()
   
   var body: some View {
-    List(self.viewModel.myEvents) { event in
+    List(self.viewModel.myEvents, id: \.name) { event in
       NavigationLink(destination: EventDetails(event: event)) {
         Text(event.name)
       }
-    }.onAppear {
-      self.viewModel.getEvents(for: User(email: "david@okun.io"))
+    }.task {
+        await self.viewModel.getEvents(for: User(email: "david@okun.io"))
     }.alert(item: self.$viewModel.error) { error in
-      Alert(title: Text("Network Error"), message: Text(error.localizedDescription), dismissButton: .cancel())
-    }
+        Alert(title: Text("Network Error"), message: Text(error.localizedDescription), dismissButton: .cancel())
+    }.listStyle(GroupedListStyle())
+      .refreshable {
+        Task {
+          await self.viewModel.getEvents(for: User(email: "david@okun.io"))
+        }
+      }
   }
 }
 

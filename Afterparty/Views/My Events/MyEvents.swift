@@ -7,31 +7,26 @@
 //
 
 import SwiftUI
+import afterparty_models_swift
 
 struct MyEvents: View {
+  @ObservedObject var viewModel = MyEventsViewModel()
   @State private var shouldShowAlert = false
+  @State private var shouldShowAddEventView = false
   var body: some View {
     NavigationView {
       EventList()
         .navigationBarItems(trailing:
           Button(action: {
-            self.shouldShowAlert = true
+            self.shouldShowAddEventView = true
           }, label: {
             Image(systemName: "plus")
           })
       )
         .navigationBarTitle("My Events")
-    }.alert(isPresented: $shouldShowAlert) {
-      Alert(title: Text("Debug Information"),
-            message: Text("""
-              root url scheme: \(EnvironmentVariables.rootURLScheme)
-              root url host: \(EnvironmentVariables.rootURLHost)
-              root url port: \(EnvironmentVariables.rootURLPort)
-              full root url: \(String(EnvironmentVariables.rootURL.absoluteString))
-              """),
-            dismissButton: .cancel())
+    }.sheet(isPresented: $shouldShowAddEventView) {
+      AddEventView()
     }
-    
   }
 }
 

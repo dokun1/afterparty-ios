@@ -16,9 +16,20 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Afterparty uses your location only to find events around you.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSAllowsLocalNetworking</key>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>ec2-52-15-243-33.us-east-2.compute.amazonaws.com</key>
+			<string></string>
+			<key>New item</key>
+			<string></string>
+		</dict>
+		<key>NSExceptionAllowsInsecureHTTPLoads</key>
 		<true/>
 	</dict>
 	<key>CFBundleURLTypes</key>
@@ -76,5 +87,9 @@
 	<string>$(ROOT_URL_PORT)</string>
 	<key>MS_APP_CENTER_SECRET</key>
 	<string>$(MS_APP_CENTER_SECRET)</string>
+	<key>PARSE_APPLICATION_ID</key>
+	<string>$(PARSE_APPLICATION_ID)</string>
+	<key>FOURSQUARE_API_KEY</key>
+	<string>$(FOURSQUARE_API_KEY)</string>
 </dict>
 </plist>

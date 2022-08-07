@@ -10,27 +10,28 @@ import Foundation
 import Combine
 import afterparty_models_swift
 
+@MainActor
 class MyEventsViewModel: ObservableObject {
   private let api = AfterpartyAPI()
   private var subscriptions = Set<AnyCancellable>()
   @Published var myEvents = [Event]()
   @Published var error: AfterpartyAPI.Error? = nil
   
-  func getEvents(for user: User) {
-    print("Fetching events for \(user.nickname)")
-    api.getMockEvents()
-      .receive(on: DispatchQueue.main)
-      .sink(receiveCompletion: { completion in
-        print("request complete")
-        if case .failure(let error) = completion {
-          print("received error with reason: \(error.localizedDescription)")
-          self.myEvents = [Event]()
-          self.error = error
-        }
-      }, receiveValue: { events in
-        self.myEvents = events
-        self.error = nil
-      })
-      .store(in: &subscriptions)
+  func addEvent(_ event: Event) async {
+    do {
+      let _: Event = try await api.session.makeRequest(using: AfterpartyAPI.Endpoint.addEvent(event))
+      self.myEvents.append(event)
+    } catch {
+      self.myEvents = [Event]()
+    }
+  }
+  
+  func getEvents(for user: User) async {
+    do {
+      let eventResponse: EventResponse = try await api.session.makeRequest(using: AfterpartyAPI.Endpoint.getEvents)
+      self.myEvents = eventResponse.results
+    } catch {
+      self.myEvents = [Event]()
+    }
   }
 }

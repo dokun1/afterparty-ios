@@ -25,11 +25,11 @@ struct MapView: UIViewRepresentable {
     let mapView = MKMapView(frame: UIScreen.main.bounds)
     mapView.showsUserLocation = true
     mapView.userTrackingMode = .follow
-    if let event = event {
-      let annotation = EventAnnotation(coordinate: CLLocationCoordinate2D(latitude: event.location.latitude, longitude: event.location.longitude))
+    if let event = event, let place = event.place {
+      let annotation = EventAnnotation(coordinate: .init(latitude: place.latitude, longitude: place.longitude))
       mapView.addAnnotation(annotation)
       let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-      let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: event.location.latitude, longitude: event.location.longitude), span: span)
+      let region = MKCoordinateRegion(center: .init(latitude: place.latitude, longitude: place.longitude), span: span)
       mapView.setRegion(region, animated: false)
     }
     return mapView

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50150EF52897141000A6132A /* AddEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50150EF42897141000A6132A /* AddEvent.swift */; };
+		50150EF9289738DC00A6132A /* PlacesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50150EF8289738DC00A6132A /* PlacesSearchView.swift */; };
+		50150EFB289738EA00A6132A /* PlacesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50150EFA289738EA00A6132A /* PlacesSearchViewModel.swift */; };
+		5039458827719EFA00468D22 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = 5039458727719EFA00468D22 /* AppCenterDistribute */; };
 		504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEC2464EE290012DA56 /* NearbyEvents.swift */; };
 		504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEE2464EE8E0012DA56 /* MyEvents.swift */; };
 		504C2CF12464EE980012DA56 /* MySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CF02464EE980012DA56 /* MySettings.swift */; };
@@ -22,9 +26,12 @@
 		507D4FA9245E52A30019C25C /* AfterpartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FA8245E52A30019C25C /* AfterpartyTests.swift */; };
 		507D4FB4245E52A30019C25C /* AfterpartyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FB3245E52A30019C25C /* AfterpartyUITests.swift */; };
 		50B74B5B2496A56E00C461CD /* afterparty-models-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 50B74B5A2496A56E00C461CD /* afterparty-models-swift */; };
-		50DB28C524B158C300F80E0A /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DB28C424B158C300F80E0A /* AppCenter.framework */; };
-		50DB28C824B158CE00F80E0A /* AppCenterDistribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DB28C624B158CE00F80E0A /* AppCenterDistribute.framework */; };
-		50DB28C924B158CE00F80E0A /* AppCenterDistributeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50DB28C724B158CE00F80E0A /* AppCenterDistributeResources.bundle */; };
+		50BE0DCA289EEF4600AE9D3D /* GetEventsMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 50BE0DC9289EEF4600AE9D3D /* GetEventsMockResponse.json */; };
+		50BE0DCC289EEF7200AE9D3D /* AddEventMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 50BE0DCB289EEF7200AE9D3D /* AddEventMockResponse.json */; };
+		50BE0DCF289EEF8900AE9D3D /* GetPlacesMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 50BE0DCE289EEF8900AE9D3D /* GetPlacesMockResponse.json */; };
+		50BE0DD2289F1FB800AE9D3D /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0DD1289F1FB800AE9D3D /* AddEventViewModel.swift */; };
+		50BE0DD4289F2C3A00AE9D3D /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0DD3289F2C3A00AE9D3D /* MockAPI.swift */; };
+		50BE0DD6289F35B800AE9D3D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0DD5289F35B800AE9D3D /* LocationManager.swift */; };
 		50EA4F4524B168F200A1D76C /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA4F4424B168F200A1D76C /* EnvironmentVariables.swift */; };
 		50EA4F4724B2116C00A1D76C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA4F4624B2116C00A1D76C /* API.swift */; };
 		50EA4F4B24B217E100A1D76C /* MyEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA4F4A24B217E100A1D76C /* MyEventsViewModel.swift */; };
@@ -49,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50150EF328970E4A00A6132A /* afterparty-models-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "afterparty-models-swift"; path = "../afterparty-models-swift"; sourceTree = "<group>"; };
+		50150EF42897141000A6132A /* AddEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvent.swift; sourceTree = "<group>"; };
+		50150EF8289738DC00A6132A /* PlacesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchView.swift; sourceTree = "<group>"; };
+		50150EFA289738EA00A6132A /* PlacesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchViewModel.swift; sourceTree = "<group>"; };
 		504C2CEC2464EE290012DA56 /* NearbyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyEvents.swift; sourceTree = "<group>"; };
 		504C2CEE2464EE8E0012DA56 /* MyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEvents.swift; sourceTree = "<group>"; };
 		504C2CF02464EE980012DA56 /* MySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettings.swift; sourceTree = "<group>"; };
@@ -95,9 +106,12 @@
 		507D4FB5245E52A30019C25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507D4FF7245E691A0019C25C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		507D4FF8245E691A0019C25C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		50DB28C424B158C300F80E0A /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCenter.framework; sourceTree = "<group>"; };
-		50DB28C624B158CE00F80E0A /* AppCenterDistribute.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCenterDistribute.framework; sourceTree = "<group>"; };
-		50DB28C724B158CE00F80E0A /* AppCenterDistributeResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AppCenterDistributeResources.bundle; sourceTree = "<group>"; };
+		50BE0DC9289EEF4600AE9D3D /* GetEventsMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetEventsMockResponse.json; sourceTree = "<group>"; };
+		50BE0DCB289EEF7200AE9D3D /* AddEventMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddEventMockResponse.json; sourceTree = "<group>"; };
+		50BE0DCE289EEF8900AE9D3D /* GetPlacesMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetPlacesMockResponse.json; sourceTree = "<group>"; };
+		50BE0DD1289F1FB800AE9D3D /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
+		50BE0DD3289F2C3A00AE9D3D /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		50BE0DD5289F35B800AE9D3D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		50EA4F3424B1650B00A1D76C /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		50EA4F3524B1652100A1D76C /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
 		50EA4F4324B1673C00A1D76C /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
@@ -112,9 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DB28C824B158CE00F80E0A /* AppCenterDistribute.framework in Frameworks */,
+				5039458827719EFA00468D22 /* AppCenterDistribute in Frameworks */,
 				50B74B5B2496A56E00C461CD /* afterparty-models-swift in Frameworks */,
-				50DB28C524B158C300F80E0A /* AppCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +162,10 @@
 			children = (
 				504C2CEE2464EE8E0012DA56 /* MyEvents.swift */,
 				50EA4F4A24B217E100A1D76C /* MyEventsViewModel.swift */,
+				50150EF42897141000A6132A /* AddEvent.swift */,
+				50BE0DD1289F1FB800AE9D3D /* AddEventViewModel.swift */,
+				50150EF8289738DC00A6132A /* PlacesSearchView.swift */,
+				50150EFA289738EA00A6132A /* PlacesSearchViewModel.swift */,
 			);
 			path = "My Events";
 			sourceTree = "<group>";
@@ -161,13 +178,23 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		506780E22896FA2A00F073DC /* RestAPI */ = {
+			isa = PBXGroup;
+			children = (
+				50EA4F4624B2116C00A1D76C /* API.swift */,
+				50BE0DD3289F2C3A00AE9D3D /* MockAPI.swift */,
+				50BE0DD0289F15F500AE9D3D /* MockAPIResponses */,
+			);
+			path = RestAPI;
+			sourceTree = "<group>";
+		};
 		507D4F82245E52A20019C25C = {
 			isa = PBXGroup;
 			children = (
+				50150EF328970E4A00A6132A /* afterparty-models-swift */,
 				507D4F8D245E52A20019C25C /* Afterparty */,
 				507D4FA7245E52A30019C25C /* AfterpartyTests */,
 				507D4FB2245E52A30019C25C /* AfterpartyUITests */,
-				50DB28C324B158AF00F80E0A /* Vendor */,
 				507D4F8C245E52A20019C25C /* Products */,
 				507D4FF6245E691A0019C25C /* Frameworks */,
 			);
@@ -226,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				507D4F92245E52A20019C25C /* Afterparty.xcdatamodeld */,
-				50EA4F4624B2116C00A1D76C /* API.swift */,
+				506780E22896FA2A00F073DC /* RestAPI */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +263,7 @@
 			children = (
 				507D4F8E245E52A20019C25C /* AppDelegate.swift */,
 				507D4F90245E52A20019C25C /* SceneDelegate.swift */,
+				50BE0DD5289F35B800AE9D3D /* LocationManager.swift */,
 				50EA4F3624B1652800A1D76C /* Environment */,
 			);
 			path = Config;
@@ -296,14 +324,14 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
-		50DB28C324B158AF00F80E0A /* Vendor */ = {
+		50BE0DD0289F15F500AE9D3D /* MockAPIResponses */ = {
 			isa = PBXGroup;
 			children = (
-				50DB28C624B158CE00F80E0A /* AppCenterDistribute.framework */,
-				50DB28C724B158CE00F80E0A /* AppCenterDistributeResources.bundle */,
-				50DB28C424B158C300F80E0A /* AppCenter.framework */,
+				50BE0DC9289EEF4600AE9D3D /* GetEventsMockResponse.json */,
+				50BE0DCB289EEF7200AE9D3D /* AddEventMockResponse.json */,
+				50BE0DCE289EEF8900AE9D3D /* GetPlacesMockResponse.json */,
 			);
-			path = Vendor;
+			path = MockAPIResponses;
 			sourceTree = "<group>";
 		};
 		50EA4F3624B1652800A1D76C /* Environment */ = {
@@ -335,6 +363,7 @@
 			name = Afterparty;
 			packageProductDependencies = (
 				50B74B5A2496A56E00C461CD /* afterparty-models-swift */,
+				5039458727719EFA00468D22 /* AppCenterDistribute */,
 			);
 			productName = Afterparty;
 			productReference = 507D4F8B245E52A20019C25C /* Afterparty.app */;
@@ -411,6 +440,7 @@
 			mainGroup = 507D4F82245E52A20019C25C;
 			packageReferences = (
 				50B74B592496A56E00C461CD /* XCRemoteSwiftPackageReference "afterparty-models-swift" */,
+				5039458627719EFA00468D22 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
 			);
 			productRefGroup = 507D4F8C245E52A20019C25C /* Products */;
 			projectDirPath = "";
@@ -429,9 +459,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				507D4F9E245E52A30019C25C /* LaunchScreen.storyboard in Resources */,
+				50BE0DCC289EEF7200AE9D3D /* AddEventMockResponse.json in Resources */,
+				50BE0DCA289EEF4600AE9D3D /* GetEventsMockResponse.json in Resources */,
+				50BE0DCF289EEF8900AE9D3D /* GetPlacesMockResponse.json in Resources */,
 				507D4F9B245E52A30019C25C /* Preview Assets.xcassets in Resources */,
 				507D4F98245E52A30019C25C /* Assets.xcassets in Resources */,
-				50DB28C924B158CE00F80E0A /* AppCenterDistributeResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +492,7 @@
 				50EA4F4B24B217E100A1D76C /* MyEventsViewModel.swift in Sources */,
 				507D4F94245E52A20019C25C /* Afterparty.xcdatamodeld in Sources */,
 				504C2E9F2464F6230012DA56 /* MapView.swift in Sources */,
+				50BE0DD4289F2C3A00AE9D3D /* MockAPI.swift in Sources */,
 				504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */,
 				50EA4F4524B168F200A1D76C /* EnvironmentVariables.swift in Sources */,
 				504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */,
@@ -469,6 +502,11 @@
 				504C2EA12464FD400012DA56 /* EventList.swift in Sources */,
 				507D4F96245E52A20019C25C /* HomeView.swift in Sources */,
 				507D4F91245E52A20019C25C /* SceneDelegate.swift in Sources */,
+				50150EF9289738DC00A6132A /* PlacesSearchView.swift in Sources */,
+				50BE0DD2289F1FB800AE9D3D /* AddEventViewModel.swift in Sources */,
+				50150EFB289738EA00A6132A /* PlacesSearchViewModel.swift in Sources */,
+				50BE0DD6289F35B800AE9D3D /* LocationManager.swift in Sources */,
+				50150EF52897141000A6132A /* AddEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,14 +683,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
 				DEVELOPMENT_TEAM = RQ632LL2X3;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,14 +723,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
 				DEVELOPMENT_TEAM = RQ632LL2X3;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -874,14 +912,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
 				DEVELOPMENT_TEAM = RQ632LL2X3;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1014,14 +1052,14 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
 				DEVELOPMENT_TEAM = RQ632LL2X3;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1157,14 +1195,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
 				DEVELOPMENT_TEAM = RQ632LL2X3;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1290,19 +1328,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Afterparty/Afterparty.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Afterparty/Preview Content\"";
 				DEVELOPMENT_TEAM = RQ632LL2X3;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Afterparty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1313,7 +1351,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = AfterpartyAdHocStaging;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1424,6 +1462,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5039458627719EFA00468D22 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		50B74B592496A56E00C461CD /* XCRemoteSwiftPackageReference "afterparty-models-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dokun1/afterparty-models-swift";
@@ -1435,6 +1481,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5039458727719EFA00468D22 /* AppCenterDistribute */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5039458627719EFA00468D22 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterDistribute;
+		};
 		50B74B5A2496A56E00C461CD /* afterparty-models-swift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50B74B592496A56E00C461CD /* XCRemoteSwiftPackageReference "afterparty-models-swift" */;

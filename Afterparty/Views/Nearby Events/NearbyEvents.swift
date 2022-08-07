@@ -9,16 +9,33 @@
 import SwiftUI
 
 struct NearbyEvents: View {
+  @ObservedObject var locationManager = LocationManager()
+  @State var shouldPresentSettings = false
+  
   var body: some View {
     NavigationView {
       VStack {
         MapView()
           .frame(height: 200, alignment: .top)
-        
         VStack {
-          EventList().listStyle(GroupedListStyle())
+          EventList()
         }
-      }.navigationBarTitle("Nearby Events")
+      }.sheet(isPresented: $shouldPresentSettings) {
+        MySettings()
+      }
+      .navigationBarTitle("Nearby Events")
+        .onAppear {
+          locationManager.startUpdating()
+        }
+        .toolbar {
+          ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+              self.shouldPresentSettings = true
+            } label: {
+              Image(systemName: "gear")
+            }
+          }
+        }
     }
   }
 }

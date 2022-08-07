@@ -9,25 +9,21 @@
 import SwiftUI
 
 struct MySettings: View {
+  @State var useMocks = false
   var body: some View {
-    NavigationView {
-      List {
-        Section(header: Text("User")) {
-          HStack {
-            Image("person.image.fill")
-            Text("Cell 1")
-          }
-          Text("Cell 2")
-          Toggle(isOn: .constant(true)) {
-            Text("Cell 3")
-          }
+    Form {
+      Section("API Settings") {
+        VStack(alignment: .leading) {
+          Text("API Root URL").font(.title2)
+          Text(EnvironmentVariables.rootURL.absoluteString).font(.callout)
         }
-        Section(header: Text("Events")) {
-          Text("Cell 4")
-          Text("Cell 5")
-          Text("Cell 6")
-        }
-      }.listStyle(GroupedListStyle()).navigationBarTitle("Settings")
+        Toggle("Use Mock API", isOn: $useMocks)
+      }
+    }.onAppear {
+      useMocks = UserDefaults.standard.bool(forKey: MockAPISession.useMockKey)
+    }
+    .onChange(of: useMocks) { newValue in
+      UserDefaults.standard.set(newValue, forKey: MockAPISession.useMockKey)
     }
   }
 }

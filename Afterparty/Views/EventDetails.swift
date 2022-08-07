@@ -19,19 +19,25 @@ struct EventDetails: View {
   }
   
   var body: some View {
-    NavigationView {
       VStack {
-        MapView(event: event).frame(height: 200, alignment: .top)
         Form {
-          Section(header: Text("When Does It Start?")) {
-            Text(formatter.string(from: event.start))
+          Section {
+            Text("Starts at: \(event.start.formatted())")
+            Text("Ends at: \(event.end.formatted())")
           }
-          Section(header: Text("When Does It End?")) {
-            Text(formatter.string(from: event.end))
+          Section("Location") {
+            if let place = event.place {
+              Label(place.name, systemImage: "mappin.circle")
+            } else {
+              Label("No place specified!", systemImage: "xmark.octagon")
+            }
+            MapView(event: event).frame(height: 200, alignment: .top)
+          }
+          Section("Description") {
+            Text(event.description)
           }
         }
-      }
-    }.navigationBarTitle(event.name)
+      }.navigationBarTitle(event.name, displayMode: .large)
   }
 }
 
