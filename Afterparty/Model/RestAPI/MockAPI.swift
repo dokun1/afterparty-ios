@@ -10,6 +10,14 @@ import Foundation
 
 class MockAPISession: NetworkSession {
   static let useMockKey = "useMockAPI"
+  static let mockUsernameKey = "mockUsername"
+  static let mockEmailKey = "mockEmail"
+  static let mockAuthTokenKey = "mockAuthToken"
+  static func randomString(length: Int) -> String {
+    let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    return String((0..<length).map{ _ in letters.randomElement()! })
+  }
+  
   private func getData<D: Decodable>(for fileName: String) throws -> D {
     print("***making mock request***")
     guard let mockResponsePath = Bundle.main.path(forResource: fileName, ofType: "json") else {
@@ -35,5 +43,9 @@ class MockAPISession: NetworkSession {
     } catch {
       throw error
     }
+  }
+  
+  var isSignedIn: Bool {
+    !(UserDefaults.standard.object(forKey: MockAPISession.mockAuthTokenKey) as? String ?? "").isEmpty
   }
 }

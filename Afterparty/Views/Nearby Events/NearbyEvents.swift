@@ -11,31 +11,49 @@ import SwiftUI
 struct NearbyEvents: View {
   @ObservedObject var locationManager = LocationManager()
   @State var shouldPresentSettings = false
+  @State var shouldPresentProfile = false
   
   var body: some View {
-    NavigationView {
-      VStack {
-        MapView()
-          .frame(height: 200, alignment: .top)
-        VStack {
-          EventList()
-        }
-      }.sheet(isPresented: $shouldPresentSettings) {
-        MySettings()
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      nearbyEventsView
+    } else {
+      NavigationView {
+        nearbyEventsView
       }
-      .navigationBarTitle("Nearby Events")
-        .onAppear {
-          locationManager.startUpdating()
+    }
+  }
+  
+  var nearbyEventsView: some View {
+    VStack {
+      MapView()
+        .frame(height: 200, alignment: .top)
+      VStack {
+        EventList()
+      }
+    }.sheet(isPresented: $shouldPresentSettings) {
+      MySettings()
+    }.sheet(isPresented: $shouldPresentProfile, content: {
+      ProfileView()
+    })
+    .navigationBarTitle("Nearby Events")
+    .onAppear {
+      locationManager.startUpdating()
+    }
+    .toolbar {
+      ToolbarItem(placement: .navigationBarTrailing) {
+        Button {
+          self.shouldPresentProfile.toggle()
+        } label: {
+          Image(systemName: "person.circle.fill")
         }
-        .toolbar {
-          ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-              self.shouldPresentSettings = true
-            } label: {
-              Image(systemName: "gear")
-            }
-          }
+      }
+      ToolbarItem(placement: .navigationBarTrailing) {
+        Button {
+          self.shouldPresentSettings.toggle()
+        } label: {
+          Image(systemName: "gear")
         }
+      }
     }
   }
 }

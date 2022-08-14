@@ -12,6 +12,7 @@ import afterparty_models_swift
 
 protocol NetworkSession {
   func makeRequest<D: Decodable>(using endpoint: AfterpartyAPI.Endpoint) async throws -> D
+  var isSignedIn: Bool { get }
 }
 
 extension URLSession: NetworkSession {
@@ -29,13 +30,23 @@ extension URLSession: NetworkSession {
       throw error
     }
   }
+  
+  var isSignedIn: Bool {
+    !(UserDefaults.standard.object(forKey: MockAPISession.mockAuthTokenKey) as? String ?? "").isEmpty
+  }
 }
 
 class AfterpartyAPI {
   init(session: NetworkSession = URLSession(configuration: .default)) {
     self.session = session
-    if UserDefaults.standard.bool(forKey: MockAPISession.useMockKey) {
-      self.session = MockAPISession()
+    Task {
+      for await _ in NotificationCenter.default.notifications(named: .init(MockAPISession.useMockKey)) {
+        if UserDefaults.standard.bool(forKey: MockAPISession.useMockKey) {
+          self.session = MockAPISession()
+        } else {
+          self.session = URLSession(configuration: .default)
+        }
+      }
     }
   }
   

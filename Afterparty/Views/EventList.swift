@@ -20,13 +20,13 @@ struct EventList: View {
         Text(event.name)
       }
     }.task {
-        await self.viewModel.getEvents(for: User(email: "david@okun.io"))
+        await self.viewModel.getEvents()
     }.alert(item: self.$viewModel.error) { error in
         Alert(title: Text("Network Error"), message: Text(error.localizedDescription), dismissButton: .cancel())
     }.listStyle(GroupedListStyle())
       .refreshable {
         Task {
-          await self.viewModel.getEvents(for: User(email: "david@okun.io"))
+          await self.viewModel.getEvents()
         }
       }
   }

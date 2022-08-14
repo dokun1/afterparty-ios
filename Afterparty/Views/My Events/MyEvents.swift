@@ -14,21 +14,36 @@ struct MyEvents: View {
   @State private var shouldShowAlert = false
   @State private var shouldShowAddEventView = false
   var body: some View {
-    NavigationView {
-      EventList()
-        .navigationBarItems(trailing:
-          Button(action: {
-            self.shouldShowAddEventView = true
-          }, label: {
-            Image(systemName: "plus")
-          })
-      )
-        .navigationBarTitle("My Events")
-    }.sheet(isPresented: $shouldShowAddEventView) {
-      AddEventView()
+    if UIDevice.current.userInterfaceIdiom == .phone {
+      NavigationView {
+        myEventsView
+      }.sheet(isPresented: $shouldShowAddEventView) {
+        AddEventView()
+      }
+    } else {
+      myEventsView
+        .sheet(isPresented: $shouldShowAddEventView) {
+          AddEventView()
+        }
     }
   }
+  
+  var myEventsView: some View {
+    EventList()
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button {
+            self.shouldShowAddEventView = true
+          } label: {
+            Image(systemName: "plus")
+          }
+        }
+      }
+      .navigationBarTitle("My Events")
+  }
 }
+
+
 
 struct MyEvents_Previews: PreviewProvider {
   static var previews: some View {

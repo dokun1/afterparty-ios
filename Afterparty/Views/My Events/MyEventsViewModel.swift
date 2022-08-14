@@ -17,6 +17,10 @@ class MyEventsViewModel: ObservableObject {
   @Published var myEvents = [Event]()
   @Published var error: AfterpartyAPI.Error? = nil
   
+  var isSignedIn: Bool {
+    api.session.isSignedIn
+  }
+  
   func addEvent(_ event: Event) async {
     do {
       let _: Event = try await api.session.makeRequest(using: AfterpartyAPI.Endpoint.addEvent(event))
@@ -26,12 +30,17 @@ class MyEventsViewModel: ObservableObject {
     }
   }
   
-  func getEvents(for user: User) async {
-    do {
-      let eventResponse: EventResponse = try await api.session.makeRequest(using: AfterpartyAPI.Endpoint.getEvents)
-      self.myEvents = eventResponse.results
-    } catch {
+  func getEvents() async {
+    if api.session.isSignedIn {
+      do {
+        let eventResponse: EventResponse = try await api.session.makeRequest(using: AfterpartyAPI.Endpoint.getEvents)
+        self.myEvents = eventResponse.results
+      } catch {
+        self.myEvents = [Event]()
+      }
+    } else {
       self.myEvents = [Event]()
+      print("not logged in")
     }
   }
 }

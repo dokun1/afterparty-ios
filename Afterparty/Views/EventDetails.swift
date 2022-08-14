@@ -19,25 +19,32 @@ struct EventDetails: View {
   }
   
   var body: some View {
-      VStack {
-        Form {
-          Section {
-            Text("Starts at: \(event.start.formatted())")
-            Text("Ends at: \(event.end.formatted())")
+    VStack {
+      Form {
+        Section {
+          Text("Starts at: \(event.start.formatted())")
+          Text("Ends at: \(event.end.formatted())")
+        }
+        Section("Location") {
+          if let place = event.place {
+            Label(place.name, systemImage: "mappin.circle")
+          } else {
+            Label("No place specified!", systemImage: "xmark.octagon")
           }
-          Section("Location") {
-            if let place = event.place {
-              Label(place.name, systemImage: "mappin.circle")
-            } else {
-              Label("No place specified!", systemImage: "xmark.octagon")
-            }
-            MapView(event: event).frame(height: 200, alignment: .top)
-          }
-          Section("Description") {
-            Text(event.description)
+          MapView(event: event).frame(height: 200, alignment: .top)
+        }
+        Section("Description") {
+          Text(event.description)
+        }
+        Section {
+          NavigationLink {
+            EventView(event)
+          } label: {
+            Label("Join Event", systemImage: "person.badge.plus")
           }
         }
-      }.navigationBarTitle(event.name, displayMode: .large)
+      }
+    }.navigationBarTitle(event.name, displayMode: .large)
   }
 }
 
