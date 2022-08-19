@@ -29,6 +29,7 @@
 		50B01F1728A85E15005E2EB5 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1628A85E15005E2EB5 /* EventView.swift */; };
 		50B01F1928A85E78005E2EB5 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1828A85E78005E2EB5 /* ButtonStyles.swift */; };
 		50B01F1C28A87074005E2EB5 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1B28A87074005E2EB5 /* EventViewModel.swift */; };
+		50B01F4128A957F5005E2EB5 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F4028A957F5005E2EB5 /* Sidebar.swift */; };
 		50B74B5B2496A56E00C461CD /* afterparty-models-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 50B74B5A2496A56E00C461CD /* afterparty-models-swift */; };
 		50BE0DCA289EEF4600AE9D3D /* GetEventsMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 50BE0DC9289EEF4600AE9D3D /* GetEventsMockResponse.json */; };
 		50BE0DCC289EEF7200AE9D3D /* AddEventMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 50BE0DCB289EEF7200AE9D3D /* AddEventMockResponse.json */; };
@@ -113,6 +114,7 @@
 		50B01F1628A85E15005E2EB5 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		50B01F1828A85E78005E2EB5 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		50B01F1B28A87074005E2EB5 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		50B01F4028A957F5005E2EB5 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		50BE0DC9289EEF4600AE9D3D /* GetEventsMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetEventsMockResponse.json; sourceTree = "<group>"; };
 		50BE0DCB289EEF7200AE9D3D /* AddEventMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddEventMockResponse.json; sourceTree = "<group>"; };
 		50BE0DCE289EEF8900AE9D3D /* GetPlacesMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetPlacesMockResponse.json; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				507D4F95245E52A20019C25C /* HomeView.swift */,
+				50B01F4028A957F5005E2EB5 /* Sidebar.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */,
 				504C2CF12464EE980012DA56 /* MySettings.swift in Sources */,
 				50EA4F4D24B2237A00A1D76C /* EventDetails.swift in Sources */,
+				50B01F4128A957F5005E2EB5 /* Sidebar.swift in Sources */,
 				507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */,
 				50B01F1C28A87074005E2EB5 /* EventViewModel.swift in Sources */,
 				50B01F1928A85E78005E2EB5 /* ButtonStyles.swift in Sources */,
@@ -733,7 +737,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -773,7 +779,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -962,7 +970,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1102,7 +1112,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = AfterpartyAdHoc;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1243,7 +1255,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1383,7 +1397,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

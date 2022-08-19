@@ -19,6 +19,22 @@ struct NearbyEvents: View {
     } else {
       NavigationView {
         nearbyEventsView
+          .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+              Button {
+                self.shouldPresentProfile.toggle()
+              } label: {
+                Image(systemName: "person.circle.fill")
+              }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+              Button {
+                self.shouldPresentSettings.toggle()
+              } label: {
+                Image(systemName: "gear")
+              }
+            }
+          }
       }
     }
   }
@@ -38,22 +54,6 @@ struct NearbyEvents: View {
     .navigationBarTitle("Nearby Events")
     .onAppear {
       locationManager.startUpdating()
-    }
-    .toolbar {
-      ToolbarItem(placement: .navigationBarTrailing) {
-        Button {
-          self.shouldPresentProfile.toggle()
-        } label: {
-          Image(systemName: "person.circle.fill")
-        }
-      }
-      ToolbarItem(placement: .navigationBarTrailing) {
-        Button {
-          self.shouldPresentSettings.toggle()
-        } label: {
-          Image(systemName: "gear")
-        }
-      }
     }
   }
 }

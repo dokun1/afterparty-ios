@@ -40,46 +40,52 @@ struct ProfileView: View {
     }
   }
   
-  var body: some View {
-    NavigationView {
-      Form {
-        Section("Read me first!") {
-          Text("As of right now, there is no sign in function for this app. Use this to \"mock\" the act of signing in.")
-          Text("Below, you'll enter your username and email address, and tap \"sign in\". You can sign out if you want to change to a different user. Actual sign in functionality will come at a later date.")
-        }
-        Section("User Details") {
-          TextField("User name", text: $username)
-            .disabled(isSignedIn)
-            .textInputAutocapitalization(.never)
-            .autocorrectionDisabled(true)
-            .foregroundColor(isSignedIn ? .gray : .black)
-          TextField("Email address", text: $emailAddress)
-            .keyboardType(.emailAddress)
-            .disabled(isSignedIn)
-            .textInputAutocapitalization(.never)
-            .autocorrectionDisabled(true)
-            .foregroundColor(isSignedIn ? .gray : .black)
-          TextField("Mock auth token will show up here", text: $authToken)
-            .disabled(true)
-            .foregroundColor(isSignedIn ? .gray : .black)
-        }
-        Section {
-          Button {
-            changeStatus(from: isSignedIn)
-          } label: {
-            if isSignedIn {
-              Label("Sign Out", systemImage: "person.badge.minus.fill")
-            } else {
-              Label("Sign In", systemImage: "person.badge.plus.fill")
-            }
+  var userForm: some View {
+    Form {
+      Section("Read me first!") {
+        Text("As of right now, there is no sign in function for this app. Use this to \"mock\" the act of signing in.")
+        Text("Below, you'll enter your username and email address, and tap \"sign in\". You can sign out if you want to change to a different user. Actual sign in functionality will come at a later date.")
+      }
+      Section("User Details") {
+        TextField("User name", text: $username)
+          .disabled(isSignedIn)
+          .textInputAutocapitalization(.never)
+          .autocorrectionDisabled(true)
+          .foregroundColor(isSignedIn ? .gray : .black)
+        TextField("Email address", text: $emailAddress)
+          .keyboardType(.emailAddress)
+          .disabled(isSignedIn)
+          .textInputAutocapitalization(.never)
+          .autocorrectionDisabled(true)
+          .foregroundColor(isSignedIn ? .gray : .black)
+        TextField("Mock auth token will show up here", text: $authToken)
+          .disabled(true)
+          .foregroundColor(isSignedIn ? .gray : .black)
+      }
+      Section {
+        Button {
+          changeStatus(from: isSignedIn)
+        } label: {
+          if isSignedIn {
+            Label("Sign Out", systemImage: "person.badge.minus.fill")
+          } else {
+            Label("Sign In", systemImage: "person.badge.plus.fill")
           }
         }
-      }.alert(errorAlertMessage, isPresented: $shouldShowAlert) {
-        Button {} label: {
-          Text("OK")
-        }
-      }.navigationTitle("User Profile")
-        .toolbar {
+      }
+    }.alert(errorAlertMessage, isPresented: $shouldShowAlert) {
+      Button {} label: {
+        Text("OK")
+      }
+    }.navigationTitle("User Profile")
+
+  }
+  
+  var body: some View {
+    if UIDevice.current.userInterfaceIdiom == .phone {
+      NavigationView {
+        userForm
+          .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
             Button {
               self.presentationMode.wrappedValue.dismiss()
@@ -88,6 +94,9 @@ struct ProfileView: View {
             }
           }
         }
+      }
+    } else {
+      userForm
     }
   }
 }

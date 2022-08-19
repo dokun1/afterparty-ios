@@ -16,13 +16,16 @@ struct EventView: View {
     self.viewModel = EventViewModel(event: event)
   }
   
+  var narrowColumns = [GridItem(.flexible()), GridItem(.flexible())]
+  var wideColumns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+  
   var body: some View {
     ScrollView {
-      LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-        ForEach(0x1f600...0x1f679, id: \.self) { value in
-          Text(String(format: "%x", value))
-          Text(emoji(value))
-            .font(.largeTitle)
+      LazyVGrid(columns: UIDevice.current.userInterfaceIdiom == .phone ? narrowColumns : wideColumns) {
+        ForEach(1...100, id: \.self) { value in
+          if let url = URL(string: "https://dummyimage.com/150x90/ffffff/037dae.png&text=Image\(value)") {
+            AsyncImage(url: url)
+          }
         }
       }.navigationTitle(viewModel.eventName)
     }.frame(maxHeight: .infinity)

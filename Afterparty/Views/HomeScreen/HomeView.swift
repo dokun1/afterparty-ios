@@ -9,11 +9,10 @@
 import SwiftUI
 
 struct HomeView: View {
-  @State private var selection = 0
-  
+  @State private var selection: NavigationChoice?
   var body: some View {
     if UIDevice.current.userInterfaceIdiom == .phone {
-      TabView(selection: $selection){
+      TabView(selection: $selection) {
         NearbyEvents()
           .tabItem {
             Image(systemName: "location.fill")
@@ -29,18 +28,15 @@ struct HomeView: View {
       }
     } else if UIDevice.current.userInterfaceIdiom == .pad {
       NavigationView {
-        List {
-          NavigationLink {
-            NearbyEvents()
-          } label: {
-            Label("Nearby Events", systemImage: "location")
-          }
-          NavigationLink {
-            MyEvents()
-          } label: {
-            Label("My Events", systemImage: "clock")
-          }
-        }.listStyle(.sidebar)
+        Sidebar()
+        if let selection = selection {
+          selection.view
+        } else {
+          EmptyView()
+        }
+        if let selection = selection, selection == .settings || selection == .profile {
+          EmptyView()
+        } 
       }
     }
   }
