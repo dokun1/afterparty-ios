@@ -31,10 +31,10 @@ class EventViewModel: ObservableObject {
   }
   
   func getPhotos() async {
-    print("get photos called for event: \(event.objectId)")
+    print("get photos called for event: \(String(describing: event.objectId))")
   }
   
   func addPhoto(_ photo: Data) async {
-    print("add photo called to event: \(event.objectId)")
+    print("add photo called to event: \(String(describing: event.objectId))")
   }
 }

@@ -47,7 +47,7 @@ struct NearbyEvents: View {
         EventList()
       }
     }.sheet(isPresented: $shouldPresentSettings) {
-      MySettings()
+      SettingsView()
     }.sheet(isPresented: $shouldPresentProfile, content: {
       ProfileView()
     })

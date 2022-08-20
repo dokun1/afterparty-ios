@@ -35,13 +35,15 @@ struct AddEventView: View {
           MapView(event: viewModel.currentEvent).frame(height: 200, alignment: .top)
         }
         Section("Description") {
-          if #available(iOS 16.0, *) {
-            TextField("What's going down?", text: $viewModel.currentEvent.description, axis: .vertical)
-              .padding()
-          } else {
             TextField("What's going down?", text: $viewModel.currentEvent.description)
               .padding()
-          }
+//          if #available(iOS 16.0, *) {
+//            TextField("What's going down?", text: $viewModel.currentEvent.description, axis: .vertical)
+//              .padding()
+//          } else {
+//            TextField("What's going down?", text: $viewModel.currentEvent.description)
+//              .padding()
+//          }
         }
     }
     .navigationBarTitle(viewModel.currentEvent.name.isEmpty ? "Event Name" : viewModel.currentEvent.name, displayMode: .large)

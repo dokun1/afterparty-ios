@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct HomeView: View {
   @State private var selection: NavigationChoice?
@@ -29,14 +30,8 @@ struct HomeView: View {
     } else if UIDevice.current.userInterfaceIdiom == .pad {
       NavigationView {
         Sidebar()
-        if let selection = selection {
-          selection.view
-        } else {
-          EmptyView()
-        }
-        if let selection = selection, selection == .settings || selection == .profile {
-          EmptyView()
-        } 
+        EmptyView()
+        EmptyView()
       }
     }
   }

@@ -13,7 +13,7 @@
 		5039458827719EFA00468D22 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = 5039458727719EFA00468D22 /* AppCenterDistribute */; };
 		504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEC2464EE290012DA56 /* NearbyEvents.swift */; };
 		504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEE2464EE8E0012DA56 /* MyEvents.swift */; };
-		504C2CF12464EE980012DA56 /* MySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CF02464EE980012DA56 /* MySettings.swift */; };
+		504C2CF12464EE980012DA56 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CF02464EE980012DA56 /* SettingsView.swift */; };
 		504C2E9F2464F6230012DA56 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2E9E2464F6230012DA56 /* MapView.swift */; };
 		504C2EA12464FD400012DA56 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2EA02464FD400012DA56 /* EventList.swift */; };
 		507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F8E245E52A20019C25C /* AppDelegate.swift */; };
@@ -25,6 +25,7 @@
 		507D4F9E245E52A30019C25C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507D4F9C245E52A30019C25C /* LaunchScreen.storyboard */; };
 		507D4FA9245E52A30019C25C /* AfterpartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FA8245E52A30019C25C /* AfterpartyTests.swift */; };
 		507D4FB4245E52A30019C25C /* AfterpartyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FB3245E52A30019C25C /* AfterpartyUITests.swift */; };
+		508FF7CA28B153320043127B /* AfterpartyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508FF7C928B153320043127B /* AfterpartyMenu.swift */; };
 		50B01F1428A83970005E2EB5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1328A83970005E2EB5 /* ProfileView.swift */; };
 		50B01F1728A85E15005E2EB5 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1628A85E15005E2EB5 /* EventView.swift */; };
 		50B01F1928A85E78005E2EB5 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1828A85E78005E2EB5 /* ButtonStyles.swift */; };
@@ -66,7 +67,7 @@
 		50150EFA289738EA00A6132A /* PlacesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchViewModel.swift; sourceTree = "<group>"; };
 		504C2CEC2464EE290012DA56 /* NearbyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyEvents.swift; sourceTree = "<group>"; };
 		504C2CEE2464EE8E0012DA56 /* MyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEvents.swift; sourceTree = "<group>"; };
-		504C2CF02464EE980012DA56 /* MySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettings.swift; sourceTree = "<group>"; };
+		504C2CF02464EE980012DA56 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		504C2CF62464F02A0012DA56 /* FirebaseABTesting.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseABTesting.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseABTesting/FirebaseABTesting.xcframework; sourceTree = "<group>"; };
 		504C2CF72464F02A0012DA56 /* Protobuf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Protobuf.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseABTesting/Protobuf.xcframework; sourceTree = "<group>"; };
 		504C2CFD2464F0350012DA56 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
@@ -110,6 +111,8 @@
 		507D4FB5245E52A30019C25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507D4FF7245E691A0019C25C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		507D4FF8245E691A0019C25C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		508FF7C828AF25060043127B /* afterparty-models-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "afterparty-models-swift"; path = "../afterparty-models-swift"; sourceTree = "<group>"; };
+		508FF7C928B153320043127B /* AfterpartyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterpartyMenu.swift; sourceTree = "<group>"; };
 		50B01F1328A83970005E2EB5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		50B01F1628A85E15005E2EB5 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		50B01F1828A85E78005E2EB5 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -182,7 +185,7 @@
 		504C2CF32464EEA60012DA56 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				504C2CF02464EE980012DA56 /* MySettings.swift */,
+				504C2CF02464EE980012DA56 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 		507D4F82245E52A20019C25C = {
 			isa = PBXGroup;
 			children = (
+				508FF7C828AF25060043127B /* afterparty-models-swift */,
 				507D4F8D245E52A20019C25C /* Afterparty */,
 				507D4FA7245E52A30019C25C /* AfterpartyTests */,
 				507D4FB2245E52A30019C25C /* AfterpartyUITests */,
@@ -332,6 +336,7 @@
 			children = (
 				507D4F95245E52A20019C25C /* HomeView.swift */,
 				50B01F4028A957F5005E2EB5 /* Sidebar.swift */,
+				508FF7C928B153320043127B /* AfterpartyMenu.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -522,10 +527,11 @@
 				507D4F94245E52A20019C25C /* Afterparty.xcdatamodeld in Sources */,
 				504C2E9F2464F6230012DA56 /* MapView.swift in Sources */,
 				50BE0DD4289F2C3A00AE9D3D /* MockAPI.swift in Sources */,
+				508FF7CA28B153320043127B /* AfterpartyMenu.swift in Sources */,
 				504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */,
 				50EA4F4524B168F200A1D76C /* EnvironmentVariables.swift in Sources */,
 				504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */,
-				504C2CF12464EE980012DA56 /* MySettings.swift in Sources */,
+				504C2CF12464EE980012DA56 /* SettingsView.swift in Sources */,
 				50EA4F4D24B2237A00A1D76C /* EventDetails.swift in Sources */,
 				50B01F4128A957F5005E2EB5 /* Sidebar.swift in Sources */,
 				507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */,
@@ -719,10 +725,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Afterparty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -761,10 +764,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Afterparty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -952,10 +952,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Afterparty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1094,10 +1091,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Afterparty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1239,10 +1233,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Afterparty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1379,10 +1370,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Afterparty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

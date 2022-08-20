@@ -24,7 +24,20 @@ struct EventView: View {
       LazyVGrid(columns: UIDevice.current.userInterfaceIdiom == .phone ? narrowColumns : wideColumns) {
         ForEach(1...100, id: \.self) { value in
           if let url = URL(string: "https://dummyimage.com/150x90/ffffff/037dae.png&text=Image\(value)") {
-            AsyncImage(url: url)
+            AsyncImage(url: url) { image in
+              VStack {
+                image
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+              }
+            } placeholder: {
+              VStack {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .orange))
+                    .scaleEffect(3)
+              }
+              
+            }
           }
         }
       }.navigationTitle(viewModel.eventName)
