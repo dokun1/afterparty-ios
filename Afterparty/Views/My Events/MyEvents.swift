@@ -13,26 +13,31 @@ struct MyEvents: View {
   @ObservedObject var viewModel = MyEventsViewModel()
   @State private var shouldShowAlert = false
   @State private var shouldShowEventCreation = false
-  @State private var shouldShowProfile = false
   @State private var shouldShowSettings = false
+  
   var body: some View {
-    if UIDevice.current.userInterfaceIdiom == .phone {
+    if viewModel.isSignedIn {
       NavigationView {
-        myEventsView
-      }.sheet(isPresented: $shouldShowEventCreation) {
-        AddEventView()
-      }
-    } else {
-      myEventsView
+        List(self.viewModel.myEvents, id: \.name) { event in
+          NavigationLink(destination: EventDetails(event: event)) {
+            Text(event.name)
+          }
+        }
+        .task {
+          await self.viewModel.getSavedEvents()
+        }
+        .navigationTitle("My Events")
+        .alert(item: self.$viewModel.error) { error in
+          Alert(title: Text("Network Error"), message: Text(error.localizedDescription), dismissButton: .cancel())
+        }
+        .refreshable {
+          Task {
+            await self.viewModel.getSavedEvents()
+          }
+        }
         .sheet(isPresented: $shouldShowEventCreation) {
           AddEventView()
         }
-    }
-  }
-  
-  @ViewBuilder var myEventsView: some View {
-    if UIDevice.current.userInterfaceIdiom == .phone {
-      EventList()
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
             Button {
@@ -42,22 +47,14 @@ struct MyEvents: View {
             }
           }
         }
-        .navigationBarTitle("My Events")
+      }
     } else {
-      EventList()
-        .toolbar {
-          ToolbarItem(placement: .primaryAction) {
-            AfterpartyMenu(profileBinding: $shouldShowProfile,
-                           settingsBinding: $shouldShowSettings,
-                           eventBinding: $shouldShowEventCreation)
-          }
-        }
-        .navigationBarTitle("My Events")
+      NavigationView {
+        EmptyMyEventView()
+      }
     }
   }
 }
-
-
 
 struct MyEvents_Previews: PreviewProvider {
   static var previews: some View {

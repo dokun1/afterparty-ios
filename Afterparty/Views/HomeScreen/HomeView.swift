@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
-import UIKit
+import afterparty_models_swift
 
 struct HomeView: View {
-  @State private var selection: NavigationChoice?
+  @State private var selection: NavigationChoice? = .nearbyEvents
+  @State private var chosenEvent: Event? = nil
+  
   var body: some View {
     if UIDevice.current.userInterfaceIdiom == .phone {
       TabView(selection: $selection) {
@@ -26,13 +28,41 @@ struct HomeView: View {
             Text("My Events")
           }
           .tag(1)
+        ProfileView()
+          .tabItem {
+            Image(systemName: "person.fill")
+            Text("Profile")
+          }
+          .tag(2)
       }
     } else if UIDevice.current.userInterfaceIdiom == .pad {
       NavigationView {
         Sidebar()
-        EmptyView()
-        EmptyView()
+        NearbyEvents()
+        EmptyEventView()
       }
+    }
+  }
+}
+
+struct EmptyMyEventView: View {
+  var body: some View {
+    VStack {
+      Image(systemName: "person.fill.questionmark")
+        .font(.system(size: 100))
+      Text("Log in to save some events!")
+        .font(.title2)
+    }
+  }
+}
+
+struct EmptyEventView: View {
+  var body: some View {
+    VStack {
+      Text("🎉")
+        .font(.system(size: 100))
+      Text("Choose a nearby event to get started.")
+        .font(.title2)
     }
   }
 }

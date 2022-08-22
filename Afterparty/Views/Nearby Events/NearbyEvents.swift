@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
+import afterparty_models_swift
 
 struct NearbyEvents: View {
+  @State var events = MockData.sampleEvents
+  @ObservedObject var viewModel = NearbyEventsViewModel()
   @ObservedObject var locationManager = LocationManager()
   @State var shouldPresentSettings = false
   @State var shouldPresentProfile = false
@@ -16,41 +19,46 @@ struct NearbyEvents: View {
   var body: some View {
     if UIDevice.current.userInterfaceIdiom == .pad {
       nearbyEventsView
+        .onDisappear {
+          locationManager.stopUpdating()
+        }
     } else {
       NavigationView {
         nearbyEventsView
-          .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-              Button {
-                self.shouldPresentProfile.toggle()
-              } label: {
-                Image(systemName: "person.circle.fill")
-              }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-              Button {
-                self.shouldPresentSettings.toggle()
-              } label: {
-                Image(systemName: "gear")
-              }
-            }
+          .onDisappear {
+            locationManager.stopUpdating()
           }
       }
     }
   }
   
   var nearbyEventsView: some View {
-    VStack {
-      MapView()
-        .frame(height: 200, alignment: .top)
-      VStack {
-        EventList()
+    List {
+      Section {
+        MapView()
+      }.frame(height: 200, alignment: .top)
+      Section {
+        ForEach(self.viewModel.myEvents, id: \.name) { event in
+          NavigationLink(destination: EventDetails(event: event)) {
+            Text(event.name)
+          }
+        }
       }
-    }.sheet(isPresented: $shouldPresentSettings) {
-      SettingsView()
-    }.sheet(isPresented: $shouldPresentProfile, content: {
+    }
+    .alert(item: self.$viewModel.error) { error in
+        Alert(title: Text("Network Error"), message: Text(error.localizedDescription), dismissButton: .cancel())
+    }
+    .task {
+      await self.viewModel.getEvents()
+    }
+    .refreshable {
+      Task {
+        await self.viewModel.getEvents()
+      }
+    }
+    .sheet(isPresented: $shouldPresentProfile) {
       ProfileView()
-    })
+    }
     .navigationBarTitle("Nearby Events")
     .onAppear {
       locationManager.startUpdating()

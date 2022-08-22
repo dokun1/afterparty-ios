@@ -13,8 +13,8 @@ import afterparty_models_swift
 @MainActor
 class AddEventViewModel: ObservableObject {
   private let api = AfterpartyAPI()
-  @Published var currentEvent = Event()
   var locationManager = LocationManager()
+  @Published var currentEvent = Event()
   @Published var error: AfterpartyAPI.Error? = nil
   
   init() {

@@ -12,7 +12,7 @@ import afterparty_models_swift
 
 @MainActor
 class MyEventsViewModel: ObservableObject {
-  private let api = AfterpartyAPI()
+  private let api = AfterpartyAPI(session: MockAPISession())
   private var subscriptions = Set<AnyCancellable>()
   @Published var myEvents = [Event]()
   @Published var error: AfterpartyAPI.Error? = nil
@@ -30,10 +30,14 @@ class MyEventsViewModel: ObservableObject {
     }
   }
   
-  func getEvents() async {
+  func getSavedEvents() async {
     if api.session.isSignedIn {
       do {
-        let eventResponse: EventResponse = try await api.session.makeRequest(using: AfterpartyAPI.Endpoint.getEvents)
+        guard let userID = UserDefaults.standard.object(forKey: MockAPISession.mockAuthTokenKey) as? String else {
+          throw AfterpartyAPI.Error.notLoggedIn
+        }
+        let endpoint = AfterpartyAPI.Endpoint.getSavedEvents(userID: userID)
+        let eventResponse: EventResponse = try await api.session.makeRequest(using: endpoint)
         self.myEvents = eventResponse.results
       } catch {
         self.myEvents = [Event]()

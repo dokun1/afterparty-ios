@@ -10,7 +10,8 @@ import SwiftUI
 import afterparty_models_swift
 
 struct EventDetails: View {
-  var event: Event
+  @ObservedObject var viewModel: EventDetailsViewModel
+  
   var formatter: DateFormatter {
     let formatter = DateFormatter()
     formatter.timeStyle = .medium
@@ -18,33 +19,45 @@ struct EventDetails: View {
     return formatter
   }
   
+  init(event: Event) {
+    self.viewModel = EventDetailsViewModel(event: event)
+  }
+  
   var body: some View {
     VStack {
       Form {
         Section {
-          Text("Starts at: \(event.start.formatted())")
-          Text("Ends at: \(event.end.formatted())")
+          Text("Starts at: \(viewModel.event.start.formatted())")
+          Text("Ends at: \(viewModel.event.end.formatted())")
         }
         Section("Location") {
-          if let place = event.place {
+          if let place = viewModel.event.place {
             Label(place.name, systemImage: "mappin.circle")
           } else {
             Label("No place specified!", systemImage: "xmark.octagon")
           }
-          MapView(event: event).frame(height: 200, alignment: .top)
+          MapView(event: viewModel.event).frame(height: 200, alignment: .top)
         }
         Section("Description") {
-          Text(event.description)
+          Text(viewModel.event.description)
         }
         Section {
+          Button {
+            Task {
+              try await viewModel.saveEvent()
+            }
+          } label: {
+            Label("Save Event", systemImage: "square.and.arrow.down")
+          }
           NavigationLink {
-            EventView(event)
+            EventView(viewModel.event)
           } label: {
             Label("Join Event", systemImage: "person.badge.plus")
           }
         }
       }
-    }.navigationBarTitle(event.name, displayMode: .large)
+    }
+    .navigationBarTitle(viewModel.event.name, displayMode: .large)
   }
 }
 

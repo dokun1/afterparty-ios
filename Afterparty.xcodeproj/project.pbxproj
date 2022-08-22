@@ -13,9 +13,7 @@
 		5039458827719EFA00468D22 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = 5039458727719EFA00468D22 /* AppCenterDistribute */; };
 		504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEC2464EE290012DA56 /* NearbyEvents.swift */; };
 		504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CEE2464EE8E0012DA56 /* MyEvents.swift */; };
-		504C2CF12464EE980012DA56 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2CF02464EE980012DA56 /* SettingsView.swift */; };
 		504C2E9F2464F6230012DA56 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2E9E2464F6230012DA56 /* MapView.swift */; };
-		504C2EA12464FD400012DA56 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C2EA02464FD400012DA56 /* EventList.swift */; };
 		507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F8E245E52A20019C25C /* AppDelegate.swift */; };
 		507D4F91245E52A20019C25C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F90245E52A20019C25C /* SceneDelegate.swift */; };
 		507D4F94245E52A20019C25C /* Afterparty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 507D4F92245E52A20019C25C /* Afterparty.xcdatamodeld */; };
@@ -26,6 +24,10 @@
 		507D4FA9245E52A30019C25C /* AfterpartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FA8245E52A30019C25C /* AfterpartyTests.swift */; };
 		507D4FB4245E52A30019C25C /* AfterpartyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D4FB3245E52A30019C25C /* AfterpartyUITests.swift */; };
 		508FF7CA28B153320043127B /* AfterpartyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508FF7C928B153320043127B /* AfterpartyMenu.swift */; };
+		508FF7D128B31C6A0043127B /* SaveEventMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 508FF7D028B31C6A0043127B /* SaveEventMockResponse.json */; };
+		508FF7D328B31CB10043127B /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508FF7D228B31CB10043127B /* EventDetailsViewModel.swift */; };
+		508FF7D528B31FBC0043127B /* GetSavedEventsMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 508FF7D428B31FBC0043127B /* GetSavedEventsMockResponse.json */; };
+		508FF7D728B322EB0043127B /* NearbyEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508FF7D628B322EB0043127B /* NearbyEventsViewModel.swift */; };
 		50B01F1428A83970005E2EB5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1328A83970005E2EB5 /* ProfileView.swift */; };
 		50B01F1728A85E15005E2EB5 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1628A85E15005E2EB5 /* EventView.swift */; };
 		50B01F1928A85E78005E2EB5 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B01F1828A85E78005E2EB5 /* ButtonStyles.swift */; };
@@ -67,7 +69,6 @@
 		50150EFA289738EA00A6132A /* PlacesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchViewModel.swift; sourceTree = "<group>"; };
 		504C2CEC2464EE290012DA56 /* NearbyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyEvents.swift; sourceTree = "<group>"; };
 		504C2CEE2464EE8E0012DA56 /* MyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEvents.swift; sourceTree = "<group>"; };
-		504C2CF02464EE980012DA56 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		504C2CF62464F02A0012DA56 /* FirebaseABTesting.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseABTesting.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseABTesting/FirebaseABTesting.xcframework; sourceTree = "<group>"; };
 		504C2CF72464F02A0012DA56 /* Protobuf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Protobuf.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseABTesting/Protobuf.xcframework; sourceTree = "<group>"; };
 		504C2CFD2464F0350012DA56 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Afterparty/Dependencies/Firebase/FirebaseAnalytics/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		504C2D342464F0810012DA56 /* FirebaseRemoteConfig.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseRemoteConfig.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseRemoteConfig/FirebaseRemoteConfig.xcframework; sourceTree = "<group>"; };
 		504C2D392464F08F0012DA56 /* FirebaseAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAuth.xcframework; path = Afterparty/Dependencies/Firebase/FirebaseAuth/FirebaseAuth.xcframework; sourceTree = "<group>"; };
 		504C2E9E2464F6230012DA56 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		504C2EA02464FD400012DA56 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		504C2EA624659E590012DA56 /* Afterparty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Afterparty.entitlements; sourceTree = "<group>"; };
 		507D4F8B245E52A20019C25C /* Afterparty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afterparty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507D4F8E245E52A20019C25C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +113,10 @@
 		507D4FF8245E691A0019C25C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		508FF7C828AF25060043127B /* afterparty-models-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "afterparty-models-swift"; path = "../afterparty-models-swift"; sourceTree = "<group>"; };
 		508FF7C928B153320043127B /* AfterpartyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterpartyMenu.swift; sourceTree = "<group>"; };
+		508FF7D028B31C6A0043127B /* SaveEventMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SaveEventMockResponse.json; sourceTree = "<group>"; };
+		508FF7D228B31CB10043127B /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		508FF7D428B31FBC0043127B /* GetSavedEventsMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSavedEventsMockResponse.json; sourceTree = "<group>"; };
+		508FF7D628B322EB0043127B /* NearbyEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyEventsViewModel.swift; sourceTree = "<group>"; };
 		50B01F1328A83970005E2EB5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		50B01F1628A85E15005E2EB5 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		50B01F1828A85E78005E2EB5 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				504C2CEC2464EE290012DA56 /* NearbyEvents.swift */,
+				508FF7D628B322EB0043127B /* NearbyEventsViewModel.swift */,
 				504C2E9E2464F6230012DA56 /* MapView.swift */,
 			);
 			path = "Nearby Events";
@@ -180,14 +185,6 @@
 				50150EFA289738EA00A6132A /* PlacesSearchViewModel.swift */,
 			);
 			path = "My Events";
-			sourceTree = "<group>";
-		};
-		504C2CF32464EEA60012DA56 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				504C2CF02464EE980012DA56 /* SettingsView.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		506780E22896FA2A00F073DC /* RestAPI */ = {
@@ -286,14 +283,13 @@
 			children = (
 				507D4F9C245E52A30019C25C /* LaunchScreen.storyboard */,
 				507D4F97245E52A30019C25C /* Assets.xcassets */,
-				504C2EA02464FD400012DA56 /* EventList.swift */,
 				50EA4F4C24B2237A00A1D76C /* EventDetails.swift */,
+				508FF7D228B31CB10043127B /* EventDetailsViewModel.swift */,
 				50B01F1A28A87066005E2EB5 /* Event */,
 				50B01F1828A85E78005E2EB5 /* ButtonStyles.swift */,
 				50B01F1528A848C2005E2EB5 /* UserProfile */,
 				504C2CE92464EDE50012DA56 /* Nearby Events */,
 				504C2CF22464EEA10012DA56 /* My Events */,
-				504C2CF32464EEA60012DA56 /* Settings */,
 				507D5078245E749E0019C25C /* HomeScreen */,
 			);
 			path = Views;
@@ -363,6 +359,8 @@
 			children = (
 				50BE0DC9289EEF4600AE9D3D /* GetEventsMockResponse.json */,
 				50BE0DCB289EEF7200AE9D3D /* AddEventMockResponse.json */,
+				508FF7D028B31C6A0043127B /* SaveEventMockResponse.json */,
+				508FF7D428B31FBC0043127B /* GetSavedEventsMockResponse.json */,
 				50BE0DCE289EEF8900AE9D3D /* GetPlacesMockResponse.json */,
 			);
 			path = MockAPIResponses;
@@ -492,6 +490,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508FF7D528B31FBC0043127B /* GetSavedEventsMockResponse.json in Resources */,
+				508FF7D128B31C6A0043127B /* SaveEventMockResponse.json in Resources */,
 				507D4F9E245E52A30019C25C /* LaunchScreen.storyboard in Resources */,
 				50BE0DCC289EEF7200AE9D3D /* AddEventMockResponse.json in Resources */,
 				50BE0DCA289EEF4600AE9D3D /* GetEventsMockResponse.json in Resources */,
@@ -531,19 +531,19 @@
 				504C2CED2464EE290012DA56 /* NearbyEvents.swift in Sources */,
 				50EA4F4524B168F200A1D76C /* EnvironmentVariables.swift in Sources */,
 				504C2CEF2464EE8E0012DA56 /* MyEvents.swift in Sources */,
-				504C2CF12464EE980012DA56 /* SettingsView.swift in Sources */,
 				50EA4F4D24B2237A00A1D76C /* EventDetails.swift in Sources */,
 				50B01F4128A957F5005E2EB5 /* Sidebar.swift in Sources */,
 				507D4F8F245E52A20019C25C /* AppDelegate.swift in Sources */,
 				50B01F1C28A87074005E2EB5 /* EventViewModel.swift in Sources */,
 				50B01F1928A85E78005E2EB5 /* ButtonStyles.swift in Sources */,
-				504C2EA12464FD400012DA56 /* EventList.swift in Sources */,
 				50B01F1428A83970005E2EB5 /* ProfileView.swift in Sources */,
 				507D4F96245E52A20019C25C /* HomeView.swift in Sources */,
 				507D4F91245E52A20019C25C /* SceneDelegate.swift in Sources */,
 				50B01F1728A85E15005E2EB5 /* EventView.swift in Sources */,
+				508FF7D328B31CB10043127B /* EventDetailsViewModel.swift in Sources */,
 				50150EF9289738DC00A6132A /* PlacesSearchView.swift in Sources */,
 				50BE0DD2289F1FB800AE9D3D /* AddEventViewModel.swift in Sources */,
+				508FF7D728B322EB0043127B /* NearbyEventsViewModel.swift in Sources */,
 				50150EFB289738EA00A6132A /* PlacesSearchViewModel.swift in Sources */,
 				50BE0DD6289F35B800AE9D3D /* LocationManager.swift in Sources */,
 				50150EF52897141000A6132A /* AddEvent.swift in Sources */,

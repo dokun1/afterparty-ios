@@ -40,6 +40,8 @@ class MockAPISession: NetworkSession {
         case .getEvents: return try getData(for: "GetEventsMockResponse")
         case .addEvent: return try getData(for: "AddEventMockResponse")
         case .foursquareGetLocations: return try getData(for: "GetPlacesMockResponse")
+        case .saveEvent: return try getData(for: "SaveEventMockResponse")
+        case .getSavedEvents: return try getData(for: "GetSavedEventsMockResponse")
       }
     } catch {
       throw error

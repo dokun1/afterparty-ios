@@ -46,6 +46,7 @@ struct AddEventView: View {
 //          }
         }
     }
+      
     .navigationBarTitle(viewModel.currentEvent.name.isEmpty ? "Event Name" : viewModel.currentEvent.name, displayMode: .large)
     .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
@@ -86,6 +87,7 @@ struct AddEventView: View {
           self.presentationMode.wrappedValue.dismiss()
         })
       }
+      .background(Color.gray)
   }
 }
 

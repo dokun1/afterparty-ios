@@ -58,12 +58,14 @@ class AfterpartyAPI {
     case addressUnreachable(URL)
     case invalidResponse
     case couldNotFindMockFile(String)
+    case notLoggedIn
     
     var errorDescription: String? {
       switch self {
         case .addressUnreachable(let url): return "\(url.absoluteString) is not reachable."
         case .invalidResponse: return "The server response is invalid."
         case .couldNotFindMockFile(let fileName): return "No mock file found named \(fileName)"
+        case .notLoggedIn: return "Not logged in"
       }
     }
   }
@@ -83,6 +85,8 @@ class AfterpartyAPI {
   fileprivate enum APIPaths {
     static let getEvents = "parse/classes/afterpartyEvents"
     static let addEvents = "parse/classes/afterpartyEvents"
+    static func saveEvent(userID: String) -> String { return "parse/classes/users/\(userID)" }
+    static func getSavedEvents(userID: String) -> String { return "parse/classes/users/\(userID)/events" }
     static let getPlaces = "/v3/places/search"
   }
   
@@ -93,17 +97,27 @@ class AfterpartyAPI {
     static let authorizationHeaderKey = "Authorization"
     static let httpScheme = "http"
     static let httpsScheme = "https"
+    static let userID: String = {
+      if let id = UserDefaults.standard.object(forKey: MockAPISession.mockAuthTokenKey) as? String {
+        return id
+      } else {
+        return ""
+      }
+    }()
   }
   
   fileprivate enum RequestTypes {
     static let get = "GET"
     static let post = "POST"
+    static let put = "PUT"
   }
   
   enum Endpoint {
     case getEvents
     case addEvent(Event)
-    case foursquareGetLocations(latitude: Double, longitude: Double, query: String?, radius: Int) // latitude, longitude, optional query, radius
+    case saveEvent(Event, userID: String)
+    case getSavedEvents(userID: String)
+    case foursquareGetLocations(latitude: Double, longitude: Double, query: String?, radius: Int)
     
     var url: URL {
       switch self {
@@ -111,6 +125,14 @@ class AfterpartyAPI {
           return EnvironmentVariables.rootURL.appendingPathComponent(APIPaths.getEvents)
         case .addEvent:
           return EnvironmentVariables.rootURL.appendingPathComponent(APIPaths.addEvents)
+        case .saveEvent(_, let userID):
+          return EnvironmentVariables
+            .rootURL
+            .appendingPathComponent(APIPaths.saveEvent(userID: userID))
+        case .getSavedEvents(let userID):
+          return EnvironmentVariables
+            .rootURL
+            .appendingPathComponent(APIPaths.getSavedEvents(userID: userID))
         case .foursquareGetLocations(let latitude, let longitude, _, let radius):
           var queryItems = [URLQueryItem]()
           queryItems.append(.init(name: FoursquareDetails.radius, value: "\(radius)"))
@@ -156,6 +178,24 @@ class AfterpartyAPI {
           ]
           request.httpMethod = RequestTypes.post
           request.httpBody = try! JSONEncoder().encode(event)
+          return request
+        case .saveEvent(let event, let userID):
+          var request = URLRequest(url: Endpoint.saveEvent(event, userID: userID).url)
+          request.allHTTPHeaderFields = [
+            RequestDetails.contentTypeHeaderKey: RequestDetails.applicationJSON,
+            ParseDetails.headerKey: EnvironmentVariables.parseApplicationID
+          ]
+          request.httpMethod = RequestTypes.put
+          let eventToAdd = ["savedEvents": event.objectId]
+          request.httpBody = try! JSONEncoder().encode(eventToAdd)
+          return request
+        case .getSavedEvents(let userID):
+          var request = URLRequest(url: Endpoint.getSavedEvents(userID: userID).url)
+          request.allHTTPHeaderFields = [
+            RequestDetails.contentTypeHeaderKey: RequestDetails.applicationJSON,
+            ParseDetails.headerKey: EnvironmentVariables.parseApplicationID
+          ]
+          request.httpMethod = RequestTypes.get
           return request
       }
     }

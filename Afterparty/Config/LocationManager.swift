@@ -19,9 +19,13 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     manager.startUpdatingLocation()
   }
   
+  func stopUpdating() {
+    manager.stopUpdatingLocation()
+  }
+  
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    print(locations)
-    lastKnownLocation = locations.last
+    guard let latest = locations.last else { return }
+    lastKnownLocation = latest
   }
   
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

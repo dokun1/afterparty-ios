@@ -15,7 +15,6 @@ import AppCenterDistribute
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    print(EnvironmentVariables.rootURL)
     AppCenter.start(withAppSecret: EnvironmentVariables.appCenterSecret, services: [Distribute.self])
     return true
   }

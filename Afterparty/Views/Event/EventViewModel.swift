@@ -13,7 +13,6 @@ import afterparty_models_swift
 @MainActor
 class EventViewModel: ObservableObject {
   private let api = AfterpartyAPI()
-  private var subscriptions = Set<AnyCancellable>()
   @Published var error: AfterpartyAPI.Error? = nil
   
   private let event: Event
