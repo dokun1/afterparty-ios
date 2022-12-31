@@ -19,29 +19,47 @@ class EventAnnotation: NSObject, MKAnnotation {
 }
 
 struct MapView: UIViewRepresentable {
-  var event: Event?
+  @State var events: [Event] = [Event]()
+//  @Binding var focusedCoordinates: CLLocationCoordinate2D? = nil
+  var mapView = MKMapView(frame: UIScreen.main.bounds)
   
   func makeUIView(context: Context) -> MKMapView {
-    let mapView = MKMapView(frame: UIScreen.main.bounds)
     mapView.showsUserLocation = true
     mapView.userTrackingMode = .follow
-    if let event = event, let place = event.place {
-      let annotation = EventAnnotation(coordinate: .init(latitude: place.latitude, longitude: place.longitude))
-      mapView.addAnnotation(annotation)
-      let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-      let region = MKCoordinateRegion(center: .init(latitude: place.latitude, longitude: place.longitude), span: span)
-      mapView.setRegion(region, animated: false)
-    }
+    drawAnnotations()
     return mapView
   }
   
+  func drawAnnotations() {
+    var longitudes = [Double]()
+    var latitudes = [Double]()
+    print("***** event count: \(events.count)")
+    for event in events {
+      if let place = event.place {
+        let annotation = EventAnnotation(coordinate: .init(latitude: place.latitude, longitude: place.longitude))
+        mapView.addAnnotation(annotation)
+        latitudes.append(place.latitude)
+        longitudes.append(place.longitude)
+      }
+    }
+    if latitudes.count > 0, longitudes.count > 0 {
+      let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+      let avgLatitude = latitudes.reduce(0.0, +) / Double(latitudes.count)
+      let avgLongitude = longitudes.reduce(0.0, +) / Double(longitudes.count)
+      let region = MKCoordinateRegion(center: .init(latitude: avgLatitude, longitude: avgLongitude), span: span)
+      mapView.setRegion(region, animated: false)
+    }
+  }
+  
   func updateUIView(_ uiView: MKMapView, context: Context) {
+    print("update")
+    drawAnnotations()
   }
 }
 
 
 struct MapView_Previews: PreviewProvider {
   static var previews: some View {
-    MapView()
+    MapView(events: [])
   }
 }

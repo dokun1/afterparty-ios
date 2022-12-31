@@ -11,7 +11,7 @@ import afterparty_models_swift
 
 @MainActor
 class NearbyEventsViewModel: ObservableObject {
-  private let api = AfterpartyAPI()
+  private let api = AfterpartyAPI(session: MockAPISession())
   @Published var myEvents = [Event]()
   @Published var error: AfterpartyAPI.Error? = nil
   

@@ -41,79 +41,69 @@ struct ProfileView: View {
     }
   }
   
-  var profileForm: some View {
-    Form {
-      Section("Read me first!") {
-        Text("As of right now, there is no sign in function for this app. Use this to \"mock\" the act of signing in.")
-        Text("Below, you'll enter your username and email address, and tap \"sign in\". You can sign out if you want to change to a different user. Actual sign in functionality will come at a later date.")
-      }
-      Section("User Details") {
-        TextField("User name", text: $username)
-          .disabled(isSignedIn)
-          .textInputAutocapitalization(.never)
-          .disableAutocorrection(true)
-          .foregroundColor(isSignedIn ? .gray : .black)
-        TextField("Email address", text: $emailAddress)
-          .keyboardType(.emailAddress)
-          .disabled(isSignedIn)
-          .textInputAutocapitalization(.never)
-          .disableAutocorrection(true)
-          .foregroundColor(isSignedIn ? .gray : .black)
-        TextField("Mock auth token will show up here", text: $authToken)
-          .disabled(true)
-          .foregroundColor(isSignedIn ? .gray : .black)
-      }
-      Section {
-        Button {
-          changeStatus(from: isSignedIn)
-        } label: {
-          if isSignedIn {
-            Label("Sign Out", systemImage: "person.badge.minus.fill")
-          } else {
-            Label("Sign In", systemImage: "person.badge.plus.fill")
-          }
-        }
-      }
-      Section("API Settings") {
-        VStack(alignment: .leading) {
-          Text("API Root URL").font(.title2)
-          Text(EnvironmentVariables.rootURL.absoluteString).font(.callout)
-        }
-        Toggle("Use Mock API", isOn: $useMocks)
-      }
-    }.alert(errorAlertMessage, isPresented: $shouldShowAlert) {
-      Button {} label: {
-        Text("OK")
-      }
-    }
-    .onAppear {
-      useMocks = UserDefaults.standard.bool(forKey: MockAPISession.useMockKey)
-    }
-    .onChange(of: useMocks) { newValue in
-      UserDefaults.standard.set(newValue, forKey: MockAPISession.useMockKey)
-      NotificationCenter.default.post(.init(name: .init(MockAPISession.useMockKey)))
-    }
-    .navigationTitle("User Profile")
-  }
-  
   var body: some View {
-    if UIDevice.current.userInterfaceIdiom != .phone {
-      NavigationView {
-        profileForm
-          .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-              Button {
-                self.presentationMode.wrappedValue.dismiss()
-              } label: {
-                Text("Done").font(.headline)
-              }
+    NavigationView {
+      Form {
+        Section("Read me first!") {
+          Text("As of right now, there is no sign in function for this app. Use this to \"mock\" the act of signing in.")
+          Text("Below, you'll enter your username and email address, and tap \"sign in\". You can sign out if you want to change to a different user. Actual sign in functionality will come at a later date.")
+        }
+        Section("User Details") {
+          TextField("User name", text: $username)
+            .disabled(isSignedIn)
+            .textInputAutocapitalization(.never)
+            .disableAutocorrection(true)
+            .foregroundColor(isSignedIn ? .gray : .black)
+          TextField("Email address", text: $emailAddress)
+            .keyboardType(.emailAddress)
+            .disabled(isSignedIn)
+            .textInputAutocapitalization(.never)
+            .disableAutocorrection(true)
+            .foregroundColor(isSignedIn ? .gray : .black)
+          TextField("Mock auth token will show up here", text: $authToken)
+            .disabled(true)
+            .foregroundColor(isSignedIn ? .gray : .black)
+        }
+        Section {
+          Button {
+            changeStatus(from: isSignedIn)
+          } label: {
+            if isSignedIn {
+              Label("Sign Out", systemImage: "person.badge.minus.fill")
+            } else {
+              Label("Sign In", systemImage: "person.badge.plus.fill")
             }
           }
+        }
+        Section("API Settings") {
+          VStack(alignment: .leading) {
+            Text("API Root URL").font(.title2)
+            Text(EnvironmentVariables.rootURL.absoluteString).font(.callout)
+          }
+          Toggle("Use Mock API", isOn: $useMocks)
+        }
+      }.alert(errorAlertMessage, isPresented: $shouldShowAlert) {
+        Button {} label: {
+          Text("OK")
+        }
       }
-    } else {
-      NavigationView {
-        profileForm
-      }      
+      .onAppear {
+        useMocks = UserDefaults.standard.bool(forKey: MockAPISession.useMockKey)
+      }
+      .onChange(of: useMocks) { newValue in
+        UserDefaults.standard.set(newValue, forKey: MockAPISession.useMockKey)
+        NotificationCenter.default.post(.init(name: .init(MockAPISession.useMockKey)))
+      }
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button {
+            self.presentationMode.wrappedValue.dismiss()
+          } label: {
+            Text("Done").font(.headline)
+          }
+        }
+      }
+      .navigationTitle("User Profile")
     }
   }
 }

@@ -32,7 +32,8 @@ struct AddEventView: View {
               Label("Choose Location", systemImage: "location.magnifyingglass")
             }
           }
-          MapView(event: viewModel.currentEvent).frame(height: 200, alignment: .top)
+          MapView(events: [viewModel.currentEvent])
+            .frame(height: 200, alignment: .top)
         }
         Section("Description") {
             TextField("What's going down?", text: $viewModel.currentEvent.description)

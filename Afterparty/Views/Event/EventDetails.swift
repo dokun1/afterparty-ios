@@ -11,6 +11,10 @@ import afterparty_models_swift
 
 struct EventDetails: View {
   @ObservedObject var viewModel: EventDetailsViewModel
+  @State var shouldShowEventAsSheet = false
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+  @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+  @Environment(\.openWindow) private var openWindow
   
   var formatter: DateFormatter {
     let formatter = DateFormatter()
@@ -36,7 +40,6 @@ struct EventDetails: View {
           } else {
             Label("No place specified!", systemImage: "xmark.octagon")
           }
-          MapView(event: viewModel.event).frame(height: 200, alignment: .top)
         }
         Section("Description") {
           Text(viewModel.event.description)
@@ -49,8 +52,8 @@ struct EventDetails: View {
           } label: {
             Label("Save Event", systemImage: "square.and.arrow.down")
           }
-          NavigationLink {
-            EventView(viewModel.event)
+          Button {
+            shouldShowEventAsSheet.toggle()
           } label: {
             Label("Join Event", systemImage: "person.badge.plus")
           }
@@ -58,6 +61,18 @@ struct EventDetails: View {
       }
     }
     .navigationBarTitle(viewModel.event.name, displayMode: .large)
+    #if os(iOS) || os(tvOS)
+    .fullScreenCover(isPresented: $shouldShowEventAsSheet) {
+      NavigationView {
+        EventView(viewModel.event)
+      }
+    }
+    #endif
+    #if os(macOS)
+    .onChange(of: shouldShowEventAsSheet) { newValue in
+      
+    }
+    #endif
   }
 }
 

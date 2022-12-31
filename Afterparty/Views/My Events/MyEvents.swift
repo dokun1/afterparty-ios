@@ -50,7 +50,7 @@ struct MyEvents: View {
       }
     } else {
       NavigationView {
-        EmptyMyEventView()
+        Text("Empty Event View")
       }
     }
   }

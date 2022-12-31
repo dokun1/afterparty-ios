@@ -11,6 +11,7 @@ import afterparty_models_swift
 
 struct EventView: View {
   @ObservedObject var viewModel: EventViewModel
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   
   init(_ event: Event) {
     self.viewModel = EventViewModel(event: event)
@@ -40,8 +41,19 @@ struct EventView: View {
             }
           }
         }
-      }.navigationTitle(viewModel.eventName)
-    }.frame(maxHeight: .infinity)
+      }
+      .navigationTitle(viewModel.eventName)
+      .toolbar {
+        ToolbarItem(placement: .primaryAction) {
+          Button {
+            self.presentationMode.wrappedValue.dismiss()
+          } label: {
+            Text("Done")
+          }
+        }
+      }
+    }
+    .frame(maxHeight: .infinity)
   }
   
   private func emoji(_ value: Int) -> String {
