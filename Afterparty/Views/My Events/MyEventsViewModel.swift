@@ -10,27 +10,41 @@ import Foundation
 import Combine
 import afterparty_models_swift
 
+@MainActor
 class MyEventsViewModel: ObservableObject {
-  private let api = AfterpartyAPI()
+  private let api = AfterpartyAPI(session: MockAPISession())
   private var subscriptions = Set<AnyCancellable>()
   @Published var myEvents = [Event]()
   @Published var error: AfterpartyAPI.Error? = nil
   
-  func getEvents(for user: User) {
-    print("Fetching events for \(user.nickname)")
-    api.getMockEvents()
-      .receive(on: DispatchQueue.main)
-      .sink(receiveCompletion: { completion in
-        print("request complete")
-        if case .failure(let error) = completion {
-          print("received error with reason: \(error.localizedDescription)")
-          self.myEvents = [Event]()
-          self.error = error
+  var isSignedIn: Bool {
+    api.session.isSignedIn
+  }
+  
+  func addEvent(_ event: Event) async {
+    do {
+      let _: Event = try await api.session.makeRequest(using: AfterpartyAPI.Endpoint.addEvent(event))
+      self.myEvents.append(event)
+    } catch {
+      self.myEvents = [Event]()
+    }
+  }
+  
+  func getSavedEvents() async {
+    if api.session.isSignedIn {
+      do {
+        guard let userID = UserDefaults.standard.object(forKey: MockAPISession.mockAuthTokenKey) as? String else {
+          throw AfterpartyAPI.Error.notLoggedIn
         }
-      }, receiveValue: { events in
-        self.myEvents = events
-        self.error = nil
-      })
-      .store(in: &subscriptions)
+        let endpoint = AfterpartyAPI.Endpoint.getSavedEvents(userID: userID)
+        let eventResponse: EventResponse = try await api.session.makeRequest(using: endpoint)
+        self.myEvents = eventResponse.results
+      } catch {
+        self.myEvents = [Event]()
+      }
+    } else {
+      self.myEvents = [Event]()
+      print("not logged in")
+    }
   }
 }

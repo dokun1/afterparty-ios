@@ -1,0 +1,103 @@
+{
+  "results": [
+    {
+      "objectId": "fvVo9sSyc7",
+      "place": {
+        "geocodes": {
+          "main": {
+            "longitude": -0.133924,
+            "latitude": 51.510767
+          }
+        },
+        "fsq_id": "55c391b1498ea9a264a570ba",
+        "categories": [
+          {
+            "id": 13003,
+            "name": "Bar"
+          }
+        ],
+        "name": "Picturehouse Central Bar",
+        "distance": 88,
+        "location": {
+          "formatted_address": "20-24 Shaftesbury Avenu (Piccadilly), London, Greater London, W1D 7DH"
+        }
+      },
+      "end": 681615102.649277,
+      "name": "David’s 40th Birthday",
+      "description": "Come celebrate four decades around the sun!",
+      "start": 681528702.649277,
+      "createdAt": "2022-08-07T01:32:07.653Z",
+      "updatedAt": "2022-08-07T01:32:07.653Z"
+    },
+    {
+      "objectId": "NyYEbvOXO8",
+      "place": {
+        "geocodes": {
+          "main": {
+            "longitude": -0.134327,
+            "latitude": 51.510689
+          }
+        },
+        "fsq_id": "516697a2e4b048ec906a8af3",
+        "categories": [
+          {
+            "id": 13272,
+            "name": "Ramen Restaurant"
+          },
+          {
+            "id": 13276,
+            "name": "Sushi Restaurant"
+          }
+        ],
+        "name": "Shoryu Ramen",
+        "distance": 103,
+        "location": {
+          "formatted_address": "3 Denman St (Shaftesbury Ave), Soho, Greater London, W1D 7HB"
+        }
+      },
+      "end": 681615295.204701,
+      "name": "Ramen Date Night",
+      "description": "Don’t you love sodium?",
+      "start": 681528895.204701,
+      "createdAt": "2022-08-07T01:35:12.793Z",
+      "updatedAt": "2022-08-07T01:35:12.793Z"
+    },
+    {
+      "objectId": "hKvBhObWa2",
+      "place": {
+        "geocodes": {
+          "main": {
+            "longitude": -0.132256,
+            "latitude": 51.510027
+          }
+        },
+        "fsq_id": "4adce812f964a5206a6221e3",
+        "categories": [
+          {
+            "id": 10010,
+            "name": "Comedy Club"
+          },
+          {
+            "id": 13003,
+            "name": "Bar"
+          },
+          {
+            "id": 13065,
+            "name": "Restaurant"
+          }
+        ],
+        "name": "The Comedy Store",
+        "distance": 87,
+        "location": {
+          "formatted_address": "1a Oxendon St (at Coventry St), London, Greater London, SW1Y 4EE"
+        }
+      },
+      "end": 681615473.161143,
+      "name": "Laughs All Night",
+      "description": "Who’s down for a laugh?! I know I am, and here’s some crazy long text to see just how long this field can get - I wonder, can it get long enough to handle a ton of Lorem ipsum? Maybe so!",
+      "start": 681529073.161142,
+      "createdAt": "2022-08-07T01:38:40.863Z",
+      "updatedAt": "2022-08-07T01:38:40.863Z"
+    }
+  ]
+}

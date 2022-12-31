@@ -7,31 +7,52 @@
 //
 
 import SwiftUI
+import afterparty_models_swift
 
 struct MyEvents: View {
+  @ObservedObject var viewModel = MyEventsViewModel()
   @State private var shouldShowAlert = false
+  @State private var shouldShowEventCreation = false
+  @State private var shouldShowSettings = false
+  
   var body: some View {
-    NavigationView {
-      EventList()
-        .navigationBarItems(trailing:
-          Button(action: {
-            self.shouldShowAlert = true
-          }, label: {
-            Image(systemName: "plus")
-          })
-      )
-        .navigationBarTitle("My Events")
-    }.alert(isPresented: $shouldShowAlert) {
-      Alert(title: Text("Debug Information"),
-            message: Text("""
-              root url scheme: \(EnvironmentVariables.rootURLScheme)
-              root url host: \(EnvironmentVariables.rootURLHost)
-              root url port: \(EnvironmentVariables.rootURLPort)
-              full root url: \(String(EnvironmentVariables.rootURL.absoluteString))
-              """),
-            dismissButton: .cancel())
+    if viewModel.isSignedIn {
+      NavigationView {
+        List(self.viewModel.myEvents, id: \.name) { event in
+          NavigationLink(destination: EventDetails(event: event)) {
+            Text(event.name)
+          }
+        }
+        .task {
+          await self.viewModel.getSavedEvents()
+        }
+        .navigationTitle("My Events")
+        .alert(item: self.$viewModel.error) { error in
+          Alert(title: Text("Network Error"), message: Text(error.localizedDescription), dismissButton: .cancel())
+        }
+        .refreshable {
+          Task {
+            await self.viewModel.getSavedEvents()
+          }
+        }
+        .sheet(isPresented: $shouldShowEventCreation) {
+          AddEventView()
+        }
+        .toolbar {
+          ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+              shouldShowEventCreation = true
+            } label: {
+              Image(systemName: "plus")
+            }
+          }
+        }
+      }
+    } else {
+      NavigationView {
+        Text("Empty Event View")
+      }
     }
-    
   }
 }
 
