@@ -144,7 +144,6 @@ struct DetentSheetStack<Background: View, Sheet: View>: UIViewControllerRepresen
        allowsDismissalGesture: Bool,
        @ViewBuilder background: () -> Background,
        @ViewBuilder sheet: () -> Sheet) {
-    print("&&& sheet lifecycle \(#function)")
     self.largestUndimmedDetentIdentifier = largestUndimmedDetentIdentifier
     self.prefersScrollingExpandsWhenScrolledToEdge = prefersScrollingExpandsWhenScrolledToEdge
     self.prefersGrabberVisible = prefersGrabberVisible
@@ -162,19 +161,16 @@ struct DetentSheetStack<Background: View, Sheet: View>: UIViewControllerRepresen
   typealias UIViewControllerType = UIViewController
   
   func makeCoordinator() -> Coordinator<Background, Sheet> {
-    print("&&& sheet lifecycle \(#function)")
     return Coordinator(self)
   }
   
   func makeUIViewController(context: Context) -> UIViewController {
-    print("&&& sheet lifecycle \(#function)")
     configureSheet(context: context)
     context.coordinator.sheetViewController.isModalInPresentation = !allowsDismissalGesture
     return context.coordinator.sheetPresentingViewController
   }
   
   func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-    print("&&& sheet lifecycle \(#function)")
     configureSheet(context: context)
   }
   
@@ -185,7 +181,6 @@ struct DetentSheetStack<Background: View, Sheet: View>: UIViewControllerRepresen
     let sheetPresentingViewController: SheetPresentingViewController<Background>
     
     init(_ sheetPresenter: DetentSheetStack<Background, Sheet>) {
-      print("&&& sheet lifecycle \(#function)")
       parent = sheetPresenter
       let sheetHostingController = SheetViewController(rootView: parent.sheet)
       sheetViewController = sheetHostingController
@@ -196,17 +191,14 @@ struct DetentSheetStack<Background: View, Sheet: View>: UIViewControllerRepresen
     }
     
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
-      print("&&& sheet lifecycle \(#function)")
       parent.selectedDetentIdentifier?.wrappedValue = sheetPresentationController.selectedDetentIdentifier
     }
     
     func sheetViewControllerDidDismiss<Content>(_ sheetViewController: SheetViewController<Content>) where Content : View {
-      print("&&& sheet lifecycle \(#function)")
       parent.isSheetPresented = false
     }
     
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-      print("&&& sheet lifecycle \(#function)")
       parent.isSheetPresented = false
     }
   }
@@ -226,15 +218,8 @@ struct DetentSheetStack<Background: View, Sheet: View>: UIViewControllerRepresen
   let sheet: Sheet
   
   private func configureSheet(context: Context) {
-    print("&&& sheet lifecycle \(#function)")
     guard let sheetPresentationController = context.coordinator.sheetViewController.sheetPresentationController else { return }
-    let sizeClass = context.coordinator.sheetPresentingViewController.traitCollection.horizontalSizeClass
-    print("&&&& size class: \(sizeClass)")
-    if sizeClass == .compact {
-      print("&&&& this might be where to dismiss it compact")
-    } else {
-      print("&&&& this might be where to dismiss it not compact")
-    }
+//    let sizeClass = context.coordinator.sheetPresentingViewController.traitCollection.horizontalSizeClass
     let animated = context.transaction.animation != nil && !context.transaction.disablesAnimations
     let presentingViewController = context.coordinator.sheetPresentingViewController
     let configure = {
@@ -269,7 +254,6 @@ final class SheetPresentingViewController<Content: View>: UIHostingController<Co
   var shouldSheetBeInitiallyPresented: Bool
   
   func setSheetPresented(_ presentSheet: Bool, animated: Bool) {
-    print("&&& sheet lifecycle \(#function)")
     guard viewHasAppeared else { return }
     if presentSheet, !isSheetPresented {
       present(sheetViewController, animated: animated, completion: nil)
@@ -279,19 +263,16 @@ final class SheetPresentingViewController<Content: View>: UIHostingController<Co
   }
   
   init(rootView: Content, shouldSheetBeInitiallyPresented: Bool, sheetViewController: UIViewController) {
-    print("&&& sheet lifecycle \(#function)")
     self.shouldSheetBeInitiallyPresented = shouldSheetBeInitiallyPresented
     self.sheetViewController = sheetViewController
     super.init(rootView: rootView)
   }
   
   @MainActor @objc required dynamic init?(coder aDecoder: NSCoder) {
-    print("&&& sheet lifecycle \(#function)")
     fatalError("init(coder:) has not been implemented")
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    print("&&& sheet lifecycle \(#function)")
     super.viewDidAppear(animated)
     guard !viewHasAppeared else { return }
     viewHasAppeared = true
@@ -309,17 +290,14 @@ final class SheetViewController<Content: View>: UIHostingController<Content> {
   weak var delegate: SheetViewControllerDelegate?
   
   override init(rootView: Content) {
-    print("&&& sheet lifecycle \(#function)")
     super.init(rootView: rootView)
   }
   
   @MainActor @objc required dynamic init?(coder aDecoder: NSCoder) {
-    print("&&& sheet lifecycle \(#function)")
     fatalError("init(coder:) has not been implemented")
   }
   
   override func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
-    print("&&& sheet lifecycle \(#function)")
     super.dismiss(animated: animated, completion: completion)
     delegate?.sheetViewControllerDidDismiss(self)
   }

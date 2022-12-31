@@ -26,7 +26,7 @@ class EventDetailsViewModel: ObservableObject {
       }
       let endpoint = AfterpartyAPI.Endpoint.saveEvent(event, userID: userID)
       let response: EventAdditionResponse = try await api.session.makeRequest(using: endpoint)
-      print("response: \(response)")
+      print(response)
     } catch {
       self.error = error as? AfterpartyAPI.Error
     }

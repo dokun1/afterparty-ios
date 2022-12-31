@@ -38,13 +38,6 @@ struct AddEventView: View {
         Section("Description") {
             TextField("What's going down?", text: $viewModel.currentEvent.description)
               .padding()
-//          if #available(iOS 16.0, *) {
-//            TextField("What's going down?", text: $viewModel.currentEvent.description, axis: .vertical)
-//              .padding()
-//          } else {
-//            TextField("What's going down?", text: $viewModel.currentEvent.description)
-//              .padding()
-//          }
         }
     }
       
@@ -56,7 +49,6 @@ struct AddEventView: View {
               Task {
                 do {
                   try await viewModel.submitEvent()
-                  print("we did it: \(String(describing: viewModel.currentEvent.objectId))")
                   self.presentationMode.wrappedValue.dismiss()
                 } catch {
                   fatalError(error.localizedDescription)

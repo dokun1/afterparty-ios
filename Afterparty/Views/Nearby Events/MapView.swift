@@ -33,7 +33,6 @@ struct MapView: UIViewRepresentable {
   func drawAnnotations() {
     var longitudes = [Double]()
     var latitudes = [Double]()
-    print("***** event count: \(events.count)")
     for event in events {
       if let place = event.place {
         let annotation = EventAnnotation(coordinate: .init(latitude: place.latitude, longitude: place.longitude))
@@ -52,7 +51,6 @@ struct MapView: UIViewRepresentable {
   }
   
   func updateUIView(_ uiView: MKMapView, context: Context) {
-    print("update")
     drawAnnotations()
   }
 }
