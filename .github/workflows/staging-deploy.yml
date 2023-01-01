@@ -13,13 +13,13 @@ jobs:
     - uses: actions/checkout@main
     
     - name: Inject staging configuration
-      run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }} ${{ secrets.FOURSQUARE_API_KEY }} ${{ secrets.PARSE_APPLICATION_ID }}
+      run: ./scripts/inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }} ${{ secrets.FOURSQUARE_API_KEY }} ${{ secrets.PARSE_APPLICATION_ID }}
 
     - name: Decrypt secrets
-      run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
+      run: ./scripts/decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
 
     - name: Clean & Build App
-      run: ./build-app-staging.sh
+      run: ./scripts/build-app-staging.sh
   
   ios_test:
     runs-on: macos-latest
@@ -29,13 +29,13 @@ jobs:
       - uses: actions/checkout@main
 
       - name: Inject staging configuration
-        run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }} ${{ secrets.FOURSQUARE_API_KEY }} ${{ secrets.PARSE_APPLICATION_ID }}
+        run: ./scripts/inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }} ${{ secrets.FOURSQUARE_API_KEY }} ${{ secrets.PARSE_APPLICATION_ID }}
 
       - name: Decrypt secrets
-        run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
+        run: ./scripts/decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
 
       - name: Run iOS sim tests
-        run: ./test-app-staging.sh
+        run: ./scripts/test-app-staging.sh
 
   ios_staging_deploy:
     runs-on: macos-latest
@@ -46,17 +46,17 @@ jobs:
       - uses: actions/checkout@main
 
       - name: Inject staging configuration
-        run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
+        run: ./scripts/inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
 
       - name: Decrypt secrets
-        run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
+        run: ./scripts/decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}      
 
       - name: Create Archive
-        run: ./archive-app-staging.sh
+        run: ./scripts/archive-app-staging.sh
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '18'
           check-latest: true
 
       - name: Install App Center CLI
@@ -69,7 +69,7 @@ jobs:
         run: appcenter apps set-current afterparty/afterparty-ios-staging
 
       - name: Export Archive
-        run: ./export-archive-staging.sh
+        run: ./scripts/export-archive-staging.sh
 
       - name: Upload Build
         run: "appcenter distribute release --file './AfterpartyProducts/Apps/Afterparty-STAGING.ipa' --group Collaborators"

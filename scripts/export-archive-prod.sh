@@ -3,7 +3,7 @@
 set -eo pipefail
 
 xcodebuild -archivePath ./Afterparty.xcarchive \
-           -exportOptionsPlist ./ExportOptions.plist \
+           -exportOptionsPlist ./config/ExportOptions.plist \
            -exportPath ./AfterpartyProducts \
            -allowProvisioningUpdates \
            -exportArchive
