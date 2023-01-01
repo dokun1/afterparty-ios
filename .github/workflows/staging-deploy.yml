@@ -72,5 +72,5 @@ jobs:
         run: ./export-archive-staging.sh
 
       - name: Upload Build
-        run: "appcenter distribute release --file './AfterpartyProducts/Afterparty Staging.ipa' --group Collaborators"
+        run: "appcenter distribute release --file './AfterpartyProducts/Apps/Afterparty-STAGING.ipa' --group Collaborators"
     
