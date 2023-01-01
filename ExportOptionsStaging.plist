@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>compileBitcode</key>
-	<true/>
+	<false/>
+	<key>destination</key>
+	<string>export</string>
 	<key>method</key>
 	<string>ad-hoc</string>
 	<key>provisioningProfiles</key>
@@ -12,7 +14,7 @@
 		<string>AfterpartyAdHocStaging</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>835A7666E2E62278724BEBBA388B6A799A659B64</string>
+	<string>Apple Distribution: David Okun (RQ632LL2X3)</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
@@ -20,6 +22,6 @@
 	<key>teamID</key>
 	<string>RQ632LL2X3</string>
 	<key>thinning</key>
-	<string>&lt;none&gt;</string>
+	<string>&lt;thin-for-all-variants&gt;</string>
 </dict>
 </plist>
